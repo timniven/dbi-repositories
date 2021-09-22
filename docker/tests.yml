@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+
+  pgsql:
+    image: postgres:13.3
+    volumes:
+      - ${PWD}/docker/provisions/postgres:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+
+  dbi-repositories:
+    image: timniven/dbi-repositories:latest
+    depends_on:
+      - pgsql
+    volumes:
+      - ${PWD}:/dbi-repositories
+    working_dir: /dbi-repositories
+    environment:
+      - PGSQL_HOST=pgsql
+      - PGSQL_PORT=5432
+      - PGSQL_USERNAME=test
+      - PGSQL_PASSWORD=test
+      - PGSQL_DB_NAME=test
+    command: python -m unittest discover

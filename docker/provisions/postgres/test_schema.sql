@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS tweets (
+    tweet_id INT PRIMARY KEY,
+    tweet VARCHAR(500) NOT NULL
+);

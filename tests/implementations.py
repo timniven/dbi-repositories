@@ -15,17 +15,26 @@ class TweetRepository(PostgresRepository):
             db_name=os.environ['PGSQL_DB_NAME'],
             table='tweets')
 
-    def add(self, tweet_id: int, tweet: str):
+    def add(self, tweet_id: int, tweet: str) -> None:
         super().add(tweet_id=tweet_id, tweet=tweet)
 
-    def delete(self, tweet_id: int):
+    def all(self, projection: Optional[List[str]] = None):
+        return super().all(projection=projection)
+
+    def delete(self, tweet_id: int) -> None:
         super().delete(tweet_id=tweet_id)
 
     def exists(self, tweet_id: int, tweet: str):
-        super().exists(tweet_id=tweet_id, tweet=tweet)
+        return super().exists(tweet_id=tweet_id, tweet=tweet)
 
     def get(self, tweet_id: int, projection: Optional[List[str]] = None):
-        pass
+        return super().get(tweet_id=tweet_id, projection=projection)
 
-    def search(self, tweet_id: int, tweet: str):
-        pass
+    def search(self,
+               tweet_id: int,
+               tweet: str,
+               projection: Optional[List[str]] = None):
+        return super().search(
+            tweet_id=tweet_id,
+            tweet=tweet,
+            projection=projection)

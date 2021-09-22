@@ -30,13 +30,15 @@ class PostgresRepository(Repository):
             return cursor
             # TODO: will closing this connection context lose the cursor?
 
-    def _get_conditions_and_values(self, **kwargs) \
+    @staticmethod
+    def _get_conditions_and_values(**kwargs) \
             -> Tuple[str, List[Any]]:
         conditions = []
         values = []
         for attr, value in kwargs.items():
-            conditions.append(f'{attr} = %s')
-            values.append(value)
+            if value:  # sometimes values can be None - don't take those
+                conditions.append(f'{attr} = %s')
+                values.append(value)
         conditions = ' AND '.join(conditions)
         return conditions, values
 
@@ -48,10 +50,11 @@ class PostgresRepository(Repository):
             password=self.password,
             dbname=self.db_name)
 
-    def _get_selector(self, projection: Optional[List[str]] = None) -> str:
+    @staticmethod
+    def _get_selector(**kwargs) -> str:
         selector = '*'
-        if projection:
-            selector = ','.join(projection)
+        if 'projection' in kwargs:
+            selector = ','.join(kwargs['projection'])
         return selector
 
     def add(self, *args, **kwargs):
@@ -68,8 +71,8 @@ class PostgresRepository(Repository):
               f'VALUES ({value_placeholders});'
         _ = self._execute(sql, values)
 
-    def all(self, projection: Optional[List[str]] = None) -> Generator:
-        selector = self._get_selector(projection)
+    def all(self, **kwargs) -> Generator:
+        selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table};'
         cursor = self._execute(sql)
         for item in cursor:
@@ -84,7 +87,9 @@ class PostgresRepository(Repository):
         return cursor['WHATISTHISATTRAGAIN?']
 
     def delete(self, *args, **kwargs):
-        pass
+        conditions, values = self._get_conditions_and_values(**kwargs)
+        sql = f'DELETE FROM {self.table} WHERE {conditions};'
+        _ = self._execute(sql, values)
 
     def exists(self, *args, **kwargs) -> bool:
         # NOTE: only handles `=` conditions
@@ -95,9 +100,9 @@ class PostgresRepository(Repository):
         # TODO
         return cursor['that_attr'] > 0
 
-    def get(self, projection: Optional[List[str]] = None, *args, **kwargs) \
+    def get(self, *args, **kwargs) \
             -> Union[Dict, None]:
-        items = self.search(projection, **kwargs)
+        items = self.search(**kwargs)
         items = list(items)
         if len(items) == 0:
             # TODO: anything to do around checking and erroring here?
@@ -106,11 +111,11 @@ class PostgresRepository(Repository):
             raise ValueError('No unique record')
         return items[0]
 
-    def search(self, projection: Optional[List[str]] = None, *args, **kwargs) \
+    def search(self, *args, **kwargs) \
             -> Generator:
         # NOTE: only handles `=` conditions
         conditions, values = self._get_conditions_and_values(**kwargs)
-        selector = self._get_selector(projection)
+        selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table} WHERE {conditions};'
         cursor = self._execute(sql, values)
         for item in cursor:

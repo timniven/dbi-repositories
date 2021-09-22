@@ -20,7 +20,7 @@ class Repository:
         """Add one item to the table/collection."""
         raise NotImplementedError
 
-    def all(self, projection: Optional[List[str]] = None):
+    def all(self, **kwargs):
         """Get all records in the table/collection.
 
         Args:
@@ -48,10 +48,10 @@ class Repository:
         """Check if an item exists in the table/collection."""
         raise NotImplementedError
 
-    def get(self, projection: Optional[List[str]] = None, *args, **kwargs):
+    def get(self, *args, **kwargs):
         """Get an item from the table/collection."""
         raise NotImplementedError
 
-    def search(self, projection: Optional[List[str]] = None, *args, **kwargs):
+    def search(self, *args, **kwargs):
         """Search for records in the table/collection."""
         raise NotImplementedError
