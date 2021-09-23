@@ -1,7 +1,7 @@
 from typing import Any, Dict, Generator, List, Optional, Tuple, Union
 
 import psycopg2
-from psycopg2.extras import DictCursor
+from psycopg2.extras import RealDictCursor
 
 from dbi_repositories.base import Repository
 
@@ -25,10 +25,9 @@ class PostgresRepository(Repository):
 
     def _execute(self, sql: str, values: Optional[List[Any]] = None):
         with self._get_connection() as conn:
-            cursor = conn.cursor(cursor_factory=DictCursor)
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
             cursor.execute(sql, values)
             return cursor
-            # TODO: will closing this connection context lose the cursor?
 
     @staticmethod
     def _get_conditions_and_values(**kwargs) \
@@ -53,9 +52,13 @@ class PostgresRepository(Repository):
     @staticmethod
     def _get_selector(**kwargs) -> str:
         selector = '*'
-        if 'projection' in kwargs:
+        if 'projection' in kwargs and kwargs['projection']:
             selector = ','.join(kwargs['projection'])
         return selector
+
+    def _iterate(self, cursor) -> Generator:
+        for item in cursor:
+            yield item
 
     def add(self, *args, **kwargs):
         attrs = []
@@ -83,8 +86,8 @@ class PostgresRepository(Repository):
     def count(self) -> int:
         sql = f'SELECT COUNT(*) FROM {self.table};'
         cursor = self._execute(sql)
-        # TODO
-        return cursor['WHATISTHISATTRAGAIN?']
+        result = cursor.fetchone()
+        return result['count']
 
     def delete(self, *args, **kwargs):
         conditions, values = self._get_conditions_and_values(**kwargs)
@@ -97,8 +100,8 @@ class PostgresRepository(Repository):
         sql = f'SELECT COUNT(*) FROM {self.table} ' \
               f'WHERE {conditions};'
         cursor = self._execute(sql, values)
-        # TODO
-        return cursor['that_attr'] > 0
+        result = cursor.fetchone()
+        return result['count'] > 0
 
     def get(self, *args, **kwargs) \
             -> Union[Dict, None]:
@@ -108,7 +111,7 @@ class PostgresRepository(Repository):
             # TODO: anything to do around checking and erroring here?
             return None
         if len(items) > 1:
-            raise ValueError('No unique record')
+            raise ValueError('No unique record, could be a deeper problem.')
         return items[0]
 
     def search(self, *args, **kwargs) \
@@ -118,5 +121,4 @@ class PostgresRepository(Repository):
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table} WHERE {conditions};'
         cursor = self._execute(sql, values)
-        for item in cursor:
-            yield item
+        return self._iterate(cursor)
