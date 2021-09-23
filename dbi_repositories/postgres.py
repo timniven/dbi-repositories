@@ -22,12 +22,18 @@ class PostgresRepository(Repository):
         self.password = password
         self.db_name = db_name
         self.table = table
+        self.conn = None
+        self.cursor = None
 
     def _execute(self, sql: str, values: Optional[List[Any]] = None):
-        with self._get_connection() as conn:
-            cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute(sql, values)
-            return cursor
+        if self.cursor:
+            self.cursor.execute(sql, values)
+            return self.cursor
+        else:
+            with self._get_connection() as conn:
+                cursor = conn.cursor(cursor_factory=RealDictCursor)
+                cursor.execute(sql, values)
+                return cursor
 
     @staticmethod
     def _get_conditions_and_values(**kwargs) \
@@ -81,7 +87,21 @@ class PostgresRepository(Repository):
         for item in cursor:
             yield item
 
-    # NOTE: no commits here.
+    def commit(self):
+        if self.conn:
+            self.conn.commit()
+
+    def connect(self):
+        self.conn = self._get_connection()
+        self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
+
+    def dispose(self):
+        if self.cursor:
+            self.cursor.close()
+        if self.conn:
+            self.conn.close()
+        self.cursor = None
+        self.conn = None
 
     def count(self) -> int:
         sql = f'SELECT COUNT(*) FROM {self.table};'

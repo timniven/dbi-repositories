@@ -9,6 +9,7 @@ class Repository:
 
     def __enter__(self):
         self.__init__(**self._kwargs)
+        self.connect()
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
@@ -30,6 +31,10 @@ class Repository:
 
     def commit(self):
         """Save changes to the database."""
+        raise NotImplementedError
+
+    def connect(self):
+        """Make a connection to the database."""
         raise NotImplementedError
 
     def count(self) -> int:

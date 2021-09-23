@@ -1,5 +1,7 @@
 import unittest
 
+from psycopg2.errors import UniqueViolation
+
 from tests.implementations import TweetRepository
 
 
@@ -102,3 +104,17 @@ class TestPostgresRepository(unittest.TestCase):
         repo.add(3, 'tweet3')
         items = list(repo.search(tweet='tweet1'))
         self.assertEqual(2, len(items))
+
+    def test_execute_uses_active_connection_when_available(self):
+        table = 'test_execute_uses_active_connection_when_available'
+        repo = TweetRepository(table=table)
+        repo.connect()
+        repo.add(1, '1')
+        try:
+            # shouldn't error here, haven't committed
+            repo.add(1, '1')
+        except UniqueViolation:
+            pass
+        # the original record shouldn't be committed
+        repo.dispose()
+        self.assertFalse(repo.exists(1))
