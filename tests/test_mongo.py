@@ -1,5 +1,7 @@
 import unittest
 
+from pymongo.errors import DuplicateKeyError
+
 from tests.implementations import TweetMongoRepository
 
 
@@ -12,6 +14,29 @@ class TestMongoRepository(unittest.TestCase):
         tweet = repo.get(1)
         expected = {'_id': 1, 'id': 1, 'text': 'tweet1'}
         self.assertEqual(expected, tweet)
+
+    def test_add_errors_when_duplicate_disallowed(self):
+        repo = TweetMongoRepository('test_add_errors_when_duplicate_disallowed')
+        tweet = {'id': 1, 'text': 'tweet1'}
+        repo.add(tweet)
+        error = False
+        try:
+            repo.add(tweet, error_duplicates=True)
+        except DuplicateKeyError:
+            error = True
+        self.assertTrue(error)
+
+    def test_add_does_not_error_when_duplicate_ignored(self):
+        repo = TweetMongoRepository(
+            'test_add_does_not_error_when_duplicate_ignored')
+        tweet = {'id': 1, 'text': 'tweet1'}
+        repo.add(tweet)
+        error = False
+        try:
+            repo.add(tweet, error_duplicates=False)
+        except DuplicateKeyError:
+            error = True
+        self.assertFalse(error)
 
     def test_all(self):
         repo = TweetMongoRepository('test_all')
