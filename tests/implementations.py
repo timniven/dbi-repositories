@@ -1,7 +1,7 @@
 import os
 from typing import Dict, Optional, List, Union
 
-from dbi_repositories.mongo import MongoRepository
+from dbi_repositories.mongo import get_client, MongoRepository
 from dbi_repositories.postgres import PostgresRepository
 
 
@@ -51,11 +51,13 @@ class TweetPgsqlRepository(PostgresRepository):
 class TweetMongoRepository(MongoRepository):
 
     def __init__(self, collection_name: str):
-        super().__init__(
+        client = get_client(
             host=os.environ['MONGO_HOST'],
             port=int(os.environ['MONGO_PORT']),
             username=os.environ['MONGO_USERNAME'],
-            password=os.environ['MONGO_PASSWORD'],
+            password=os.environ['MONGO_PASSWORD'])
+        super().__init__(
+            client=client,
             db_name='test_mongo_twitter',
             collection_name=collection_name,
             _id_attr='id')

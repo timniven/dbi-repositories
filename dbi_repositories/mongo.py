@@ -6,35 +6,32 @@ import pymongo
 from dbi_repositories.base import Repository
 
 
+def get_client(host: str, port: int, username: str, password: str) \
+        -> pymongo.MongoClient:
+    return pymongo.MongoClient(
+        host=host,
+        port=port,
+        username=username,
+        password=password)
+
+
 class MongoRepository(Repository):
-    # re connection handling: https://pymongo.readthedocs.io/en/stable/faq.html#how-does-connection-pooling-work-in-pymongo
-    # make one pymongo.MongoClient / process, let it handle multiple connections
-    # don't make a new client per request (very inefficient)
+    # NOTE: construct here has a client, because in the usual case where you
+    # can have more than one collection/repo, you should still use the same
+    # single connection per thread, so share them around...
 
     def __init__(self,
-                 host: str,
-                 port: int,
-                 username: str,
-                 password: str,
+                 client: pymongo.MongoClient,
                  db_name: str,
                  collection_name: str,
                  _id_attr: Optional[str] = None):
         super().__init__()
 
-        self.host = host
-        self.port = port
-        self.username = username
-        self.password = password
         self.db_name = db_name
         self.collection_name = collection_name
         self._id_attr = _id_attr
 
-        self.client = pymongo.MongoClient(
-            host=self.host,
-            port=self.port,
-            username=self.username,
-            password=self.password)
-
+        self.client = client
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]
 
