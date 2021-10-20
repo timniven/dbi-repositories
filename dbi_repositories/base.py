@@ -13,8 +13,6 @@ class Repository:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        # implementation note - see: https://stackoverflow.com/questions
-        # /22417323/how-do-enter-and-exit-work-in-python-decorator-classes
         self.dispose()
 
     def add(self, *args, **kwargs):
