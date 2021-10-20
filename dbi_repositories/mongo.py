@@ -2,6 +2,7 @@ import logging
 from typing import Any, Dict, Generator, Optional
 
 import pymongo
+from pymongo.errors import DuplicateKeyError
 
 from dbi_repositories.base import Repository
 
@@ -35,10 +36,14 @@ class MongoRepository(Repository):
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]
 
-    def add(self, item: Dict, **kwargs) -> None:
+    def add(self, item: Dict, error_duplicates: bool = False, **kwargs) -> None:
         if self._id_attr:
             item['_id'] = item[self._id_attr]
-        self.collection.insert_one(item)
+        try:
+            self.collection.insert_one(item)
+        except DuplicateKeyError as e:
+            if error_duplicates:
+                raise e
 
     def all(self, **kwargs) -> Generator:
         cursor = self.collection.find({})
