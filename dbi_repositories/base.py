@@ -19,6 +19,10 @@ class Repository:
         """Add one item to the table/collection."""
         raise NotImplementedError
 
+    def add_many(self, *args, **kwargs):
+        """Add many items to this table/collection, where supported."""
+        raise NotImplementedError
+
     def all(self, **kwargs):
         """Get all records in the table/collection.
 

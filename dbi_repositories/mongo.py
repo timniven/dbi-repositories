@@ -1,8 +1,8 @@
 import logging
-from typing import Any, Dict, Generator, Optional
+from typing import Any, Dict, Generator, List, Optional
 
 import pymongo
-from pymongo.errors import DuplicateKeyError
+from pymongo.errors import BulkWriteError, DuplicateKeyError
 
 from dbi_repositories.base import Repository
 
@@ -43,6 +43,20 @@ class MongoRepository(Repository):
             self.collection.insert_one(item)
         except DuplicateKeyError as e:
             if error_duplicates:
+                raise e
+
+    def add_many(self,
+                 items: List[Dict],
+                 error_duplicates: bool = False,
+                 **kwargs) -> None:
+        if self._id_attr:
+            for item in items:
+                item['_id'] = item[self._id_attr]
+        try:
+            self.collection.insert_many(items)
+        except BulkWriteError as e:
+            duplicate_error = 'duplicate key error' in e.__dict__['_message']
+            if duplicate_error and error_duplicates:
                 raise e
 
     def all(self, **kwargs) -> Generator:

@@ -1,6 +1,6 @@
 import unittest
 
-from pymongo.errors import DuplicateKeyError
+from pymongo.errors import BulkWriteError, DuplicateKeyError
 
 from tests.implementations import TweetMongoRepository
 
@@ -23,6 +23,35 @@ class TestMongoRepository(unittest.TestCase):
         try:
             repo.add(tweet, error_duplicates=True)
         except DuplicateKeyError:
+            error = True
+        self.assertTrue(error)
+
+    def test_add_many(self):
+        repo = TweetMongoRepository('test_add_many')
+        tweets = [
+            {'id': 1, 'text': 'tweet1'},
+            {'id': 2, 'text': 'tweet2'},
+        ]
+        repo.add_many(tweets, error_duplicates=False)
+        tweets = list(repo.all())
+        expected = [
+            {'_id': 1, 'id': 1, 'text': 'tweet1'},
+            {'_id': 2, 'id': 2, 'text': 'tweet2'},
+        ]
+        self.assertEqual(expected, tweets)
+
+    def test_add_many_errors_duplicate_when_requested(self):
+        repo = TweetMongoRepository(
+            'test_add_many_errors_duplicate_when_requested')
+        tweets = [
+            {'id': 1, 'text': 'tweet1'},
+            {'id': 2, 'text': 'tweet2'},
+            {'id': 2, 'text': 'tweet2'},
+        ]
+        error = False
+        try:
+            repo.add_many(tweets, error_duplicates=True)
+        except BulkWriteError as e:
             error = True
         self.assertTrue(error)
 
