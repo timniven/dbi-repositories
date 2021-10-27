@@ -101,6 +101,12 @@ class MongoRepository(Repository):
             item = None
         return item
 
+    def update(self, key: Any, item: Dict, upsert: bool = False, **kwargs):
+        self.collection.replace_one(
+            filter={'_id': key},
+            replacement=item,
+            upsert=upsert)
+
     def search(self, *args, **kwargs):
         cursor = self.collection.find(kwargs)
         for x in cursor:

@@ -59,6 +59,10 @@ class Repository:
         """Get an item from the table/collection."""
         raise NotImplementedError
 
+    def update(self, *args, **kwargs):
+        """Update an item."""
+        raise NotImplementedError
+
     def search(self, *args, **kwargs):
         """Search for records in the table/collection."""
         raise NotImplementedError
