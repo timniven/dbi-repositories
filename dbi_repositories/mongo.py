@@ -101,9 +101,9 @@ class MongoRepository(Repository):
             item = None
         return item
 
-    def update(self, key: Any, item: Dict, upsert: bool = False, **kwargs):
+    def update(self, item: Dict, upsert: bool = False, **kwargs):
         self.collection.replace_one(
-            filter={'_id': key},
+            filter={'_id': item['_id']},
             replacement=item,
             upsert=upsert)
 

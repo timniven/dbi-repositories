@@ -128,7 +128,7 @@ class TestMongoRepository(unittest.TestCase):
         tweet = repo.get(1)
         self.assertEqual('a', tweet['label'])
         tweet['label'] = 'b'
-        repo.update(1, tweet)
+        repo.update(tweet)
         tweet = repo.get(1)
         self.assertEqual('b', tweet['label'])
 
