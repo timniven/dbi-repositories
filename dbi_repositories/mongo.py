@@ -94,11 +94,7 @@ class MongoRepository(Repository):
         return exists
 
     def get(self, key: Any, **kwargs):
-        cursor = self.search({'_id': key})
-        try:
-            item = next(cursor)
-        except StopIteration:
-            item = None
+        item = self.collection.find_one({'_id': key})
         return item
 
     def update(self, item: Dict, upsert: bool = False, **kwargs):
