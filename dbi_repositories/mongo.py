@@ -53,7 +53,12 @@ class MongoRepository(Repository):
             for item in items:
                 item['_id'] = item[self._id_attr]
         try:
-            self.collection.insert_many(items)
+            # NOTE: ordered=False reason: if ordered, the documents will be
+            # inserted in the order supplied, if False, they will all be tried
+            # in parallel, so the only ones that fail are the ones that are
+            # supposed to, so the way this function works is to insert all
+            # legitimate items.
+            self.collection.insert_many(items, ordered=False)
         except BulkWriteError as e:
             duplicate_error = 'duplicate key error' in e.__dict__['_message']
             if duplicate_error and error_duplicates:

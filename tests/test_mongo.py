@@ -26,6 +26,18 @@ class TestMongoRepository(unittest.TestCase):
             error = True
         self.assertTrue(error)
 
+    def test_add_does_not_error_when_duplicate_ignored(self):
+        repo = TweetMongoRepository(
+            'test_add_does_not_error_when_duplicate_ignored')
+        tweet = {'id': 1, 'text': 'tweet1'}
+        repo.add(tweet)
+        error = False
+        try:
+            repo.add(tweet, error_duplicates=False)
+        except DuplicateKeyError:
+            error = True
+        self.assertFalse(error)
+
     def test_add_many(self):
         repo = TweetMongoRepository('test_add_many')
         tweets = [
@@ -55,17 +67,24 @@ class TestMongoRepository(unittest.TestCase):
             error = True
         self.assertTrue(error)
 
-    def test_add_does_not_error_when_duplicate_ignored(self):
+    def test_add_many_inserts_non_duplicates_when_errors_ignored(self):
         repo = TweetMongoRepository(
-            'test_add_does_not_error_when_duplicate_ignored')
-        tweet = {'id': 1, 'text': 'tweet1'}
-        repo.add(tweet)
+            'test_add_many_inserts_non_duplicates_when_errors_ignored')
+        repo.add({'id': 1, 'text': 'tweet1'})
+        tweets = [
+            {'id': 1, 'text': 'tweet1'},
+            {'id': 2, 'text': 'tweet2'},
+            {'id': 3, 'text': 'tweet3'},
+        ]
         error = False
         try:
-            repo.add(tweet, error_duplicates=False)
-        except DuplicateKeyError:
+            repo.add_many(tweets, error_duplicates=False)
+        except BulkWriteError:
             error = True
         self.assertFalse(error)
+        self.assertTrue(repo.exists(_id=1))
+        self.assertTrue(repo.exists(_id=2))
+        self.assertTrue(repo.exists(_id=3))
 
     def test_all(self):
         repo = TweetMongoRepository('test_all')
