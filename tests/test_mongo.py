@@ -151,6 +151,14 @@ class TestMongoRepository(unittest.TestCase):
         tweet = repo.get(1)
         self.assertEqual('b', tweet['label'])
 
+    def test_update_attributes(self):
+        repo = TweetMongoRepository('test_update_attributes')
+        repo.add({'id': 1, 'text': 'tweet1', 'label': 'a', 'lang': 'en'})
+        repo.update_attributes(1, label='b', lang='zh')
+        tweet = repo.get(1)
+        self.assertEqual('b', tweet['label'])
+        self.assertEqual('zh', tweet['lang'])
+
     def test_search(self):
         repo = TweetMongoRepository('test_search')
         repo.add({'id': 1, 'text': 'tweet1', 'label': 'a'})

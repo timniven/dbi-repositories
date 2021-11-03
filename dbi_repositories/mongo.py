@@ -108,6 +108,11 @@ class MongoRepository(Repository):
             replacement=item,
             upsert=upsert)
 
+    def update_attributes(self, key: Any, **kwargs):
+        self.collection.update_one(
+            filter={'_id': key},
+            update={'$set': kwargs})
+
     def search(self, *args, **kwargs):
         cursor = self.collection.find(kwargs)
         for x in cursor:
