@@ -14,7 +14,8 @@ class PostgresRepository(Repository):
                  user: str,
                  password: str,
                  db_name: str,
-                 table: str):
+                 table: str,
+                 create_table_if_not_exists: bool = False):
         super().__init__()
         self.host = host
         self.port = port
@@ -24,6 +25,13 @@ class PostgresRepository(Repository):
         self.table = table
         self.conn = None
         self.cursor = None
+        if create_table_if_not_exists:
+            self._create_table()
+
+    def _create_table(self):
+        sql = self._table_definition()
+        sql = sql.replace('TABLE_NAME', self.table)
+        self._execute(sql)
 
     def _execute(self, sql: str, values: Optional[List[Any]] = None):
         if self.cursor:
@@ -65,6 +73,11 @@ class PostgresRepository(Repository):
     def _iterate(self, cursor) -> Generator:
         for item in cursor:
             yield item
+
+    def _table_definition(self) -> str:
+        # convention is to replace table name with TABLE_NAME, and then it will
+        # automatically be replaced with self.table - see _create_table()
+        raise NotImplementedError
 
     def add(self, *args, **kwargs):
         attrs = []

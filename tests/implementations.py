@@ -14,14 +14,14 @@ class TweetPgsqlRepository(PostgresRepository):
             user=os.environ['PGSQL_USERNAME'],
             password=os.environ['PGSQL_PASSWORD'],
             db_name=os.environ['PGSQL_DB_NAME'],
-            table=table)
-        self._create_table()
+            table=table,
+            create_table_if_not_exists=True)
 
-    def _create_table(self):
-        sql = f'CREATE TABLE IF NOT EXISTS {self.table} ( ' \
-              f'tweet_id INT PRIMARY KEY, ' \
-              f'tweet VARCHAR(500) NOT NULL );'
-        self._execute(sql)
+    def _table_definition(self) -> str:
+        return """CREATE TABLE IF NOT EXISTS TABLE_NAME (
+            tweet_id INT PRIMARY KEY,
+            tweet VARCHAR(500) NOT NULL
+        );"""
 
     def add(self, tweet_id: int, tweet: str) -> None:
         super().add(tweet_id=tweet_id, tweet=tweet)
