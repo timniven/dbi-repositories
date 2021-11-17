@@ -72,7 +72,7 @@ class PostgresRepository(Repository):
 
     def _iterate(self, cursor) -> Generator:
         for item in cursor:
-            yield item
+            yield dict(item)
 
     def _table_definition(self) -> str:
         # convention is to replace table name with TABLE_NAME, and then it will
@@ -139,13 +139,11 @@ class PostgresRepository(Repository):
     def get(self, *args, **kwargs) \
             -> Union[Dict, None]:
         items = self.search(**kwargs)
-        items = list(items)
-        if len(items) == 0:
-            # TODO: anything to do around checking and erroring here?
+        try:
+            item = next(items)
+            return item
+        except StopIteration:
             return None
-        if len(items) > 1:
-            raise ValueError('No unique record, could be a deeper problem.')
-        return items[0]
 
     def search(self, *args, **kwargs) \
             -> Generator:

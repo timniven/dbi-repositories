@@ -94,6 +94,7 @@ class TestPostgresRepository(unittest.TestCase):
             table='test_get_returns_item_when_exists')
         repo.add(1, 'tweet1')
         item = repo.get(1)
+        self.assertIsInstance(item, dict)
         self.assertIsNotNone(item)
 
     def test_search_returns_correct_items(self):

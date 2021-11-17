@@ -26,6 +26,7 @@ services:
     image: timniven/dbi-repositories:latest
     depends_on:
       - pgsql
+      - mongo
     volumes:
       - ${PWD}:/dbi-repositories
     working_dir: /dbi-repositories
