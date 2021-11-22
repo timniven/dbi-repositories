@@ -1,36 +1,36 @@
 import os
-from typing import Dict, Optional, List, Union
+from typing import Dict, Optional, List
 
 from dbi_repositories.mongo import get_client, MongoRepository
-from dbi_repositories.postgres import PostgresRepository
+from dbi_repositories.postgres import ConnectionFactory, create_db, \
+    PostgresRepository
+
+
+with open('docker/provisions/postgres/startup/test_schema.sql') as f:
+    test_schema = f.read().strip()
+
+
+def get_test_connection_factory(db_name: str = os.environ['PGSQL_DB_NAME']) \
+        -> ConnectionFactory:
+    return ConnectionFactory(
+        host=os.environ['PGSQL_HOST'],
+        port=int(os.environ['PGSQL_PORT']),
+        user=os.environ['PGSQL_USERNAME'],
+        password=os.environ['PGSQL_PASSWORD'],
+        db_name=db_name)
+
+
+def create_test_database(db_name: str, schema: str = test_schema):
+    connection_factory = get_test_connection_factory()
+    create_db(connection_factory, db_name, schema)
 
 
 class TweetPgsqlRepository(PostgresRepository):
 
-    def __init__(self, table: str = 'tweet'):
+    def __init__(self, db_name: str):
         super().__init__(
-            host=os.environ['PGSQL_HOST'],
-            port=int(os.environ['PGSQL_PORT']),
-            user=os.environ['PGSQL_USERNAME'],
-            password=os.environ['PGSQL_PASSWORD'],
-            db_name=os.environ['PGSQL_DB_NAME'],
-            table=table,
-            create_table_if_not_exists=True)
-
-    def _table_definition(self) -> str:
-        return """CREATE TABLE IF NOT EXISTS TABLE_NAME (
-            tweet_id INT PRIMARY KEY,
-            tweet VARCHAR(500) NOT NULL
-        );"""
-
-    def add(self, tweet_id: int, tweet: str) -> None:
-        super().add(tweet_id=tweet_id, tweet=tweet)
-
-    def all(self, projection: Optional[List[str]] = None):
-        return super().all(projection=projection)
-
-    def delete(self, tweet_id: int) -> None:
-        super().delete(tweet_id=tweet_id)
+            connection_factory=get_test_connection_factory(db_name=db_name),
+            table='tweet')
 
     def exists(self, tweet_id: int):
         return super().exists(tweet_id=tweet_id)

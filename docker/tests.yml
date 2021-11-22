@@ -5,13 +5,16 @@ services:
   pgsql:
     image: postgres:13.3
     volumes:
-      - ${PWD}/docker/provisions/postgres:/docker-entrypoint-initdb.d/
+      - ${PWD}/docker/provisions/postgres/startup:/docker-entrypoint-initdb.d/
+      - ${PWD}/docker/provisions/postgres/conf:/etc/postgresql/
+      - ${PWD}/docker/provisions/postgres/certs:/var/lib/postgresql/
     ports:
       - "5432:5432"
     environment:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
       - POSTGRES_DB=test
+    command: -c 'config_file=/etc/postgresql/postgresql.conf'
 
   mongo:
     image: mongo:4.4.10

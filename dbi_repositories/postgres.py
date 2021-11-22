@@ -1,47 +1,87 @@
 from typing import Any, Dict, Generator, List, Optional, Tuple, Union
 
 import psycopg2
+from psycopg2 import extensions
+from psycopg2.errors import UniqueViolation
 from psycopg2.extras import RealDictCursor
 
 from dbi_repositories.base import Repository
 
 
-class PostgresRepository(Repository):
+"""
+Ref:
+https://www.psycopg.org/docs/usage.html#transactions-control
+"""
+
+
+class ConnectionFactory:
 
     def __init__(self,
                  host: str,
                  port: int,
                  user: str,
                  password: str,
-                 db_name: str,
-                 table: str,
-                 create_table_if_not_exists: bool = False):
-        super().__init__()
+                 db_name: str):
         self.host = host
         self.port = port
         self.user = user
         self.password = password
         self.db_name = db_name
+
+    def __call__(self, db_name: Optional[str] = None):
+        if not db_name:
+            db_name = self.db_name
+        return get_connection(
+            host=self.host,
+            port=self.port,
+            user=self.user,
+            password=self.password,
+            db_name=db_name)
+
+
+def get_connection(host: str,
+                   port: int,
+                   user: str,
+                   password: str,
+                   db_name: str):
+    return psycopg2.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        dbname=db_name,
+        sslmode='require')
+
+
+def create_db(connection_factory: ConnectionFactory,
+              db_name: str,
+              sql_schema: str):
+    connection = connection_factory()
+    connection.set_isolation_level(extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+    with connection.cursor() as cursor:
+        sql = f'CREATE DATABASE {db_name};'
+        cursor.execute(sql)
+    connection.set_isolation_level(extensions.ISOLATION_LEVEL_DEFAULT)
+    connection.commit()
+    connection.close()
+    with connection_factory(db_name) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(sql_schema)
+
+
+class PostgresRepository(Repository):
+    """Base Postgres repository.
+
+    This is meant to be opinionated, and the opinion is that all transactions
+    are atomic (single transaction). Hence `add_many` and `delete_many`.
+    """
+
+    def __init__(self,
+                 connection_factory: ConnectionFactory,
+                 table: str):
+        super().__init__()
+        self.connection_factory = connection_factory
         self.table = table
-        self.conn = None
-        self.cursor = None
-        if create_table_if_not_exists:
-            self._create_table()
-
-    def _create_table(self):
-        sql = self._table_definition()
-        sql = sql.replace('TABLE_NAME', self.table)
-        self._execute(sql)
-
-    def _execute(self, sql: str, values: Optional[List[Any]] = None):
-        if self.cursor:
-            self.cursor.execute(sql, values)
-            return self.cursor
-        else:
-            with self._get_connection() as conn:
-                cursor = conn.cursor(cursor_factory=RealDictCursor)
-                cursor.execute(sql, values)
-                return cursor
 
     @staticmethod
     def _get_conditions_and_values(**kwargs) \
@@ -55,14 +95,6 @@ class PostgresRepository(Repository):
         conditions = ' AND '.join(conditions)
         return conditions, values
 
-    def _get_connection(self):
-        return psycopg2.connect(
-            host=self.host,
-            port=self.port,
-            user=self.user,
-            password=self.password,
-            dbname=self.db_name)
-
     @staticmethod
     def _get_selector(**kwargs) -> str:
         selector = '*'
@@ -70,19 +102,10 @@ class PostgresRepository(Repository):
             selector = ','.join(kwargs['projection'])
         return selector
 
-    def _iterate(self, cursor) -> Generator:
-        for item in cursor:
-            yield dict(item)
-
-    def _table_definition(self) -> str:
-        # convention is to replace table name with TABLE_NAME, and then it will
-        # automatically be replaced with self.table - see _create_table()
-        raise NotImplementedError
-
-    def add(self, *args, **kwargs):
+    def _item_to_insert_statement(self, item: Dict) -> Tuple[str, List[Any]]:
         attrs = []
         values = []
-        for attr, value in kwargs.items():
+        for attr, value in item.items():
             attrs.append(attr)
             values.append(value)
         attrs = ','.join(attrs)
@@ -91,50 +114,69 @@ class PostgresRepository(Repository):
         sql = f'INSERT INTO {self.table} ' \
               f'({attrs}) ' \
               f'VALUES ({value_placeholders});'
-        _ = self._execute(sql, values)
+        return sql, values
+
+    def add(self, item: Dict, ignore_duplicates: bool = False, **kwargs):
+        sql, values = self._item_to_insert_statement(item)
+        try:
+            with self.connection_factory() as conn:
+                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    _ = cursor.execute(sql, values)
+        except UniqueViolation as e:
+            if not ignore_duplicates:
+                raise e
+
+    def add_many(self, items: List[Dict], **kwargs):
+        # NOTE: unable to ignore duplicates - errors cannot continue, and
+        #  everything gets rolled back
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                for item in items:
+                    sql, values = self._item_to_insert_statement(item)
+                    _ = cursor.execute(sql, values)
 
     def all(self, **kwargs) -> Generator:
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table};'
-        cursor = self._execute(sql)
-        for item in cursor:
-            yield item
-
-    def commit(self):
-        if self.conn:
-            self.conn.commit()
-
-    def connect(self):
-        self.conn = self._get_connection()
-        self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
-
-    def dispose(self):
-        if self.cursor:
-            self.cursor.close()
-        if self.conn:
-            self.conn.close()
-        self.cursor = None
-        self.conn = None
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql)
+                for item in cursor:
+                    yield dict(item)
 
     def count(self) -> int:
         sql = f'SELECT COUNT(*) FROM {self.table};'
-        cursor = self._execute(sql)
-        result = cursor.fetchone()
-        return result['count']
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                return result['count']
 
-    def delete(self, *args, **kwargs):
-        conditions, values = self._get_conditions_and_values(**kwargs)
+    def delete(self, conditions: Dict, **kwargs) -> None:
+        conditions, values = self._get_conditions_and_values(**conditions)
         sql = f'DELETE FROM {self.table} WHERE {conditions};'
-        _ = self._execute(sql, values)
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+
+    def delete_many(self, conditions: List[Dict], **kwargs) -> None:
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                for cond in conditions:
+                    cond, values = self._get_conditions_and_values(**cond)
+                    sql = f'DELETE FROM {self.table} WHERE {cond};'
+                    cursor.execute(sql, values)
 
     def exists(self, *args, **kwargs) -> bool:
         # NOTE: only handles `=` conditions
         conditions, values = self._get_conditions_and_values(**kwargs)
         sql = f'SELECT COUNT(*) FROM {self.table} ' \
               f'WHERE {conditions};'
-        cursor = self._execute(sql, values)
-        result = cursor.fetchone()
-        return result['count'] > 0
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+                result = cursor.fetchone()
+                return result['count'] > 0
 
     def get(self, *args, **kwargs) \
             -> Union[Dict, None]:
@@ -151,5 +193,8 @@ class PostgresRepository(Repository):
         conditions, values = self._get_conditions_and_values(**kwargs)
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table} WHERE {conditions};'
-        cursor = self._execute(sql, values)
-        return self._iterate(cursor)
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+                for item in cursor:
+                    yield dict(item)

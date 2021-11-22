@@ -1,3 +1,7 @@
+# project specific
+docker/provisions/postgres/certs/server.crt
+docker/provisions/postgres/certs/server.key
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

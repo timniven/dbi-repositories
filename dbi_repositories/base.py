@@ -47,6 +47,10 @@ class Repository:
         """Delete an item from the table/collection."""
         raise NotImplementedError
 
+    def delete_many(self, *args, **kwargs):
+        """Delete many items from the table/collection."""
+        raise NotImplementedError
+
     def dispose(self):
         """Dispose of this Repository."""
         raise NotImplementedError

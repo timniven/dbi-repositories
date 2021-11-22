@@ -2,7 +2,7 @@ import unittest
 
 from psycopg2.errors import UniqueViolation
 
-from tests.implementations import TweetPgsqlRepository
+from tests.implementations import create_test_database, TweetPgsqlRepository
 
 
 class TestPostgresRepository(unittest.TestCase):
@@ -39,83 +39,150 @@ class TestPostgresRepository(unittest.TestCase):
         self.assertEqual(expected, selector)
 
     def test_add_inserts_item(self):
-        repo = TweetPgsqlRepository(table='test_add_inserts_item')
-        repo.add(1, 'tweet1')
+        db_name = 'test_add_inserts_item'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet)
         item = repo.get(1)
-        expected = {'tweet_id': 1, 'tweet': 'tweet1'}
-        self.assertEqual(expected, item)
+        self.assertEqual(tweet, item)
+
+    def test_add_ignores_duplicates_when_requested(self):
+        db_name = 'test_add_ignores_duplicates_when_requested'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet)
+        error = False
+        try:
+            repo.add(tweet, ignore_duplicates=True)
+        except UniqueViolation:
+            error = True
+        self.assertFalse(error)
+
+    def test_add_errors_duplicates_when_requested(self):
+        db_name = 'test_add_errors_duplicates_when_requested'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet)
+        error = False
+        try:
+            repo.add(tweet, ignore_duplicates=False)
+        except UniqueViolation:
+            error = True
+        self.assertTrue(error)
+
+    def test_add_many(self):
+        db_name = 'test_add_many'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2'}
+        repo.add_many([tweet1, tweet2])
+        self.assertTrue(repo.exists(1))
+        self.assertTrue(repo.exists(2))
+
+    def test_add_many_rolls_back_on_error(self):
+        db_name = 'test_add_many_rolls_back_on_error'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        try:
+            repo.add_many([tweet1, tweet2])
+        except UniqueViolation:
+            pass
+        self.assertFalse(repo.exists(1))
 
     def test_all_returns_all_items(self):
-        repo = TweetPgsqlRepository(table='test_all_returns_all_items')
-        repo.add(1, 'tweet1')
-        repo.add(2, 'tweet2')
+        db_name = 'test_all_returns_all_items'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2'}
+        repo.add(tweet1)
+        repo.add(tweet2)
         items = list(repo.all())
-        expected = [
-            {'tweet_id': 1, 'tweet': 'tweet1'},
-            {'tweet_id': 2, 'tweet': 'tweet2'},
-        ]
+        expected = [tweet1, tweet2]
         self.assertEqual(expected, items)
 
     def test_count_returns_number_of_items_in_table(self):
-        repo = TweetPgsqlRepository(
-            table='test_count_returns_number_of_items_in_table')
-        repo.add(1, 'tweet1')
-        repo.add(2, 'tweet2')
-        repo.add(3, 'tweet3')
+        db_name = 'test_count_returns_number_of_items_in_table'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2'}
+        tweet3 = {'tweet_id': 3, 'tweet': 'tweet3'}
+        repo.add(tweet1)
+        repo.add(tweet2)
+        repo.add(tweet3)
         count = repo.count()
         self.assertEqual(3, count)
 
     def test_delete_removes_items(self):
-        repo = TweetPgsqlRepository(table='test_delete_removes_items')
-        repo.add(1, 'tweet1')
+        db_name = 'test_delete_removes_items'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet1)
         self.assertTrue(repo.exists(1))
-        repo.delete(1)
+        repo.delete(dict(tweet_id=1))
         self.assertFalse(repo.exists(1))
 
+    def test_delete_many(self):
+        db_name = 'test_delete_many'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2'}
+        repo.add_many([tweet1, tweet2])
+        self.assertTrue(repo.exists(1))
+        self.assertTrue(repo.exists(2))
+        repo.delete_many([{'tweet_id': 1}, {'tweet_id': 2}])
+        self.assertFalse(repo.exists(1))
+        self.assertFalse(repo.exists(2))
+
     def test_exists_returns_true_when_item_exists(self):
-        repo = TweetPgsqlRepository(
-            table='test_exists_returns_true_when_item_exists')
-        repo.add(1, 'tweet1')
+        db_name = 'test_exists_returns_true_when_item_exists'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet1)
         self.assertTrue(repo.exists(1))
 
     def test_exists_returns_false_when_item_does_not_exist(self):
-        repo = TweetPgsqlRepository(
-            table='test_exists_returns_false_when_item_does_not_exist')
+        db_name = 'test_exists_returns_false_when_item_does_not_exist'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
         self.assertFalse(repo.exists(1))
 
     def test_get_returns_none_when_item_does_not_exist(self):
-        repo = TweetPgsqlRepository(
-            table='test_get_returns_none_when_item_does_not_exist')
+        db_name = 'test_get_returns_none_when_item_does_not_exist'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
         item = repo.get(1)
         self.assertIsNone(item)
 
     def test_get_returns_item_when_exists(self):
-        repo = TweetPgsqlRepository(
-            table='test_get_returns_item_when_exists')
-        repo.add(1, 'tweet1')
+        db_name = 'test_get_returns_item_when_exists'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        repo.add(tweet1)
         item = repo.get(1)
         self.assertIsInstance(item, dict)
         self.assertIsNotNone(item)
 
     def test_search_returns_correct_items(self):
-        repo = TweetPgsqlRepository(
-            table='test_search_returns_correct_items')
-        repo.add(1, 'tweet1')
-        repo.add(2, 'tweet1')
-        repo.add(3, 'tweet3')
+        db_name = 'test_search_returns_correct_items'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet1'}
+        tweet3 = {'tweet_id': 3, 'tweet': 'tweet3'}
+        repo.add(tweet1)
+        repo.add(tweet2)
+        repo.add(tweet3)
         items = list(repo.search(tweet='tweet1'))
         self.assertEqual(2, len(items))
-
-    def test_execute_uses_active_connection_when_available(self):
-        table = 'test_execute_uses_active_connection_when_available'
-        repo = TweetPgsqlRepository(table=table)
-        repo.connect()
-        repo.add(1, '1')
-        try:
-            # shouldn't error here, haven't committed
-            repo.add(1, '1')
-        except UniqueViolation:
-            pass
-        # the original record shouldn't be committed
-        repo.dispose()
-        self.assertFalse(repo.exists(1))
