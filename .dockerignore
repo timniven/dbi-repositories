@@ -1,0 +1,2 @@
+docker/provisions/postgres/certs/server.crt
+docker/provisions/postgres/certs/server.key

@@ -1,6 +1,7 @@
 # project specific
 docker/provisions/postgres/certs/server.crt
 docker/provisions/postgres/certs/server.key
+Untitled.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
