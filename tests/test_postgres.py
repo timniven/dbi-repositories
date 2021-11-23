@@ -42,7 +42,7 @@ class TestPostgresRepository(unittest.TestCase):
         db_name = 'test_add_inserts_item'
         create_test_database(db_name)
         repo = TweetPgsqlRepository(db_name=db_name)
-        tweet = {'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet = {'label': None, 'tweet_id': 1, 'tweet': 'tweet1'}
         repo.add(tweet)
         item = repo.get(1)
         self.assertEqual(tweet, item)
@@ -99,8 +99,8 @@ class TestPostgresRepository(unittest.TestCase):
         db_name = 'test_all_returns_all_items'
         create_test_database(db_name)
         repo = TweetPgsqlRepository(db_name=db_name)
-        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1'}
-        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2'}
+        tweet1 = {'label': None, 'tweet_id': 1, 'tweet': 'tweet1'}
+        tweet2 = {'label': None, 'tweet_id': 2, 'tweet': 'tweet2'}
         repo.add(tweet1)
         repo.add(tweet2)
         items = list(repo.all())
@@ -186,3 +186,36 @@ class TestPostgresRepository(unittest.TestCase):
         repo.add(tweet3)
         items = list(repo.search(tweet='tweet1'))
         self.assertEqual(2, len(items))
+
+    def test_update_single_item(self):
+        db_name = 'test_update_single_item'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1', 'label': 'a'}
+        repo.add(tweet)
+        result = repo.get(1)
+        self.assertEqual('a', result['label'])
+        tweet['label'] = 'b'
+        repo.update(tweet, ['tweet_id'], ['label'])
+        result = repo.get(1)
+        self.assertEqual('b', result['label'])
+
+    def test_update_many_items(self):
+        db_name = 'test_update_many_items'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1', 'label': 'a'}
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2', 'label': 'a'}
+        repo.add(tweet1)
+        repo.add(tweet2)
+        result = repo.get(1)
+        self.assertEqual('a', result['label'])
+        result = repo.get(2)
+        self.assertEqual('a', result['label'])
+        tweet1['label'] = 'b'
+        tweet2['label'] = 'b'
+        repo.update_many([tweet1, tweet2], ['tweet_id'], ['label'])
+        result = repo.get(1)
+        self.assertEqual('b', result['label'])
+        result = repo.get(2)
+        self.assertEqual('b', result['label'])

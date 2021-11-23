@@ -30,7 +30,7 @@ class TweetPgsqlRepository(PostgresRepository):
     def __init__(self, db_name: str):
         super().__init__(
             connection_factory=get_test_connection_factory(db_name=db_name),
-            table='tweet')
+            table_name='tweet')
 
     def exists(self, tweet_id: int):
         return super().exists(tweet_id=tweet_id)
