@@ -1,5 +1,6 @@
 import logging
-from typing import Any, Dict, Generator, List, Optional, Tuple, Union
+from typing import Any, Dict, Generator, List, MutableMapping, Optional, \
+    Tuple, Union
 
 import psycopg2
 from psycopg2 import extensions
@@ -103,7 +104,8 @@ class PostgresRepository(Repository):
             selector = ','.join(kwargs['projection'])
         return selector
 
-    def _item_to_insert_statement(self, item: Dict) -> Tuple[str, List[Any]]:
+    def _item_to_insert_statement(self, item: MutableMapping) \
+            -> Tuple[str, List[Any]]:
         attrs = []
         values = []
         for attr, value in item.items():
@@ -117,7 +119,10 @@ class PostgresRepository(Repository):
               f'VALUES ({value_placeholders});'
         return sql, values
 
-    def add(self, item: Dict, ignore_duplicates: bool = False, **kwargs):
+    def add(self,
+            item: MutableMapping,
+            ignore_duplicates: bool = False,
+            **kwargs):
         sql, values = self._item_to_insert_statement(item)
         try:
             with self.connection_factory() as conn:
@@ -127,7 +132,7 @@ class PostgresRepository(Repository):
             if not ignore_duplicates:
                 raise e
 
-    def add_many(self, items: List[Dict], **kwargs):
+    def add_many(self, items: List[MutableMapping], **kwargs):
         # NOTE: unable to ignore duplicates - errors cannot continue, and
         #  everything gets rolled back
         with self.connection_factory() as conn:
@@ -208,7 +213,7 @@ class PostgresRepository(Repository):
                     yield dict(item)
 
     def _get_update_sql_and_values(self,
-                                   item: Dict,
+                                   item: MutableMapping,
                                    condition_keys: List[str],
                                    update_keys: List[str]) \
             -> Tuple[str, List[Any]]:
@@ -225,7 +230,7 @@ class PostgresRepository(Repository):
         return sql, values
 
     def update(self,
-               item: Dict,
+               item: MutableMapping,
                condition_keys: List[str],
                update_keys: List[str]) -> None:
         sql, values = self._get_update_sql_and_values(
@@ -235,7 +240,7 @@ class PostgresRepository(Repository):
                 cursor.execute(sql, values)
 
     def update_many(self,
-                    items: List[Dict],
+                    items: List[MutableMapping],
                     condition_keys: List[str],
                     update_keys: List[str]) -> None:
         with self.connection_factory() as conn:
