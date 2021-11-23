@@ -119,6 +119,9 @@ class PostgresRepository(Repository):
               f'VALUES ({value_placeholders});'
         return sql, values
 
+    def _map_item(self, item: Dict) -> MutableMapping:
+        return item
+
     def add(self,
             item: MutableMapping,
             ignore_duplicates: bool = False,
@@ -148,7 +151,7 @@ class PostgresRepository(Repository):
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(sql)
                 for item in cursor:
-                    yield dict(item)
+                    yield self._map_item(dict(item))
 
     def commit(self):
         logging.warning(
@@ -210,7 +213,7 @@ class PostgresRepository(Repository):
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(sql, values)
                 for item in cursor:
-                    yield dict(item)
+                    yield self._map_item(dict(item))
 
     def _get_update_sql_and_values(self,
                                    item: MutableMapping,
