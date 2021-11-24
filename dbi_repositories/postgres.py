@@ -104,6 +104,23 @@ class PostgresRepository(Repository):
             selector = ','.join(kwargs['projection'])
         return selector
 
+    def _get_update_sql_and_values(self,
+                                   item: MutableMapping,
+                                   condition_keys: List[str],
+                                   update_keys: List[str]) \
+            -> Tuple[str, List[Any]]:
+        update = {k: item[k] for k in update_keys}
+        where = {k: item[k] for k in condition_keys}
+        update_conditions, update_values = \
+            self._get_conditions_and_values(**update)
+        where_conditions, where_values = \
+            self._get_conditions_and_values(**where)
+        values = update_values + where_values
+        sql = f'UPDATE {self.table_name} ' \
+              f'SET {update_conditions} ' \
+              f'WHERE {where_conditions};'
+        return sql, values
+
     def _item_to_insert_statement(self, item: MutableMapping) \
             -> Tuple[str, List[Any]]:
         attrs = []
@@ -119,13 +136,17 @@ class PostgresRepository(Repository):
               f'VALUES ({value_placeholders});'
         return sql, values
 
-    def _map_item(self, item: Dict) -> MutableMapping:
+    def _map_item_in(self, item: MutableMapping) -> Dict:
+        return {k: v for k, v in item.items()}
+
+    def _map_item_out(self, item: Dict) -> MutableMapping:
         return item
 
     def add(self,
             item: MutableMapping,
             ignore_duplicates: bool = False,
             **kwargs):
+        item = self._map_item_in(item)
         sql, values = self._item_to_insert_statement(item)
         try:
             with self.connection_factory() as conn:
@@ -141,6 +162,7 @@ class PostgresRepository(Repository):
         with self.connection_factory() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 for item in items:
+                    item = self._map_item_in(item)
                     sql, values = self._item_to_insert_statement(item)
                     _ = cursor.execute(sql, values)
 
@@ -151,7 +173,7 @@ class PostgresRepository(Repository):
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(sql)
                 for item in cursor:
-                    yield self._map_item(dict(item))
+                    yield self._map_item_out(dict(item))
 
     def commit(self):
         logging.warning(
@@ -213,24 +235,7 @@ class PostgresRepository(Repository):
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(sql, values)
                 for item in cursor:
-                    yield self._map_item(dict(item))
-
-    def _get_update_sql_and_values(self,
-                                   item: MutableMapping,
-                                   condition_keys: List[str],
-                                   update_keys: List[str]) \
-            -> Tuple[str, List[Any]]:
-        update = {k: item[k] for k in update_keys}
-        where = {k: item[k] for k in condition_keys}
-        update_conditions, update_values = \
-            self._get_conditions_and_values(**update)
-        where_conditions, where_values = \
-            self._get_conditions_and_values(**where)
-        values = update_values + where_values
-        sql = f'UPDATE {self.table_name} ' \
-              f'SET {update_conditions} ' \
-              f'WHERE {where_conditions};'
-        return sql, values
+                    yield self._map_item_out(dict(item))
 
     def update(self,
                item: MutableMapping,
