@@ -1,3 +1,4 @@
+from collections.abc import MutableMapping
 import logging
 from typing import Any, Dict, Generator, List, Optional
 
@@ -36,7 +37,10 @@ class MongoRepository(Repository):
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]
 
-    def add(self, item: Dict, error_duplicates: bool = False, **kwargs) -> None:
+    def add(self,
+            item: MutableMapping,
+            error_duplicates: bool = False,
+            **kwargs) -> None:
         if self._id_attr:
             item['_id'] = item[self._id_attr]
         try:
@@ -46,7 +50,7 @@ class MongoRepository(Repository):
                 raise e
 
     def add_many(self,
-                 items: List[Dict],
+                 items: List[MutableMapping],
                  error_duplicates: bool = False,
                  **kwargs) -> None:
         if self._id_attr:
@@ -102,11 +106,11 @@ class MongoRepository(Repository):
         item = self.collection.find_one({'_id': key})
         return item
 
-    def update(self, item: Dict, upsert: bool = False, **kwargs):
+    def update(self, item: MutableMapping, **kwargs):
         self.collection.replace_one(
             filter={'_id': item['_id']},
             replacement=item,
-            upsert=upsert)
+            upsert=False)
 
     def update_attributes(self, key: Any, **kwargs):
         self.collection.update_one(
@@ -117,3 +121,12 @@ class MongoRepository(Repository):
         cursor = self.collection.find(kwargs)
         for x in cursor:
             yield x
+
+    def upsert(self, item: MutableMapping, **kwargs):
+        self.collection.replace_one(
+            filter={'_id': item['_id']},
+            replacement=item,
+            upsert=False)
+
+    def update_many(self, items: List[MutableMapping], **kwargs):
+        raise NotImplementedError('Have not found a good way yet.')

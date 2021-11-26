@@ -80,21 +80,25 @@ class PostgresRepository(Repository):
 
     def __init__(self,
                  connection_factory: ConnectionFactory,
-                 table_name: str):
+                 table_name: str,
+                 primary_keys: List[str]):
         super().__init__()
         self.connection_factory = connection_factory
         self.table_name = table_name
+        self.primary_keys = primary_keys
 
     @staticmethod
-    def _get_conditions_and_values(**kwargs) \
+    def _get_conditions_and_values(alias: Optional[str] = None, **kwargs) \
             -> Tuple[str, List[Any]]:
         conditions = []
         values = []
         for attr, value in kwargs.items():
+            if alias:
+                attr = f'{alias}.{attr}'
             if value:  # sometimes values can be None - don't take those
                 conditions.append(f'{attr} = %s')
                 values.append(value)
-        conditions = ' AND '.join(conditions)
+        conditions = ', '.join(conditions)
         return conditions, values
 
     @staticmethod
@@ -107,22 +111,31 @@ class PostgresRepository(Repository):
     def _get_update_sql_and_values(self,
                                    item: MutableMapping,
                                    condition_keys: List[str],
-                                   update_keys: List[str]) \
+                                   update_keys: List[str],
+                                   include_table_name: bool = True,
+                                   alias: Optional[str] = None) \
             -> Tuple[str, List[Any]]:
         update = {k: item[k] for k in update_keys}
         where = {k: item[k] for k in condition_keys}
         update_conditions, update_values = \
             self._get_conditions_and_values(**update)
         where_conditions, where_values = \
-            self._get_conditions_and_values(**where)
+            self._get_conditions_and_values(alias=alias, **where)
         values = update_values + where_values
-        sql = f'UPDATE {self.table_name} ' \
-              f'SET {update_conditions} ' \
-              f'WHERE {where_conditions};'
+        sql = 'UPDATE '
+        if include_table_name:
+            sql += f'{self.table_name} '
+        sql += f'SET {update_conditions} ' \
+               f'WHERE {where_conditions};'
         return sql, values
 
-    def _item_to_insert_statement(self, item: MutableMapping) \
+    def _item_to_insert_statement(self,
+                                  item: MutableMapping,
+                                  upsert: bool = False,
+                                  ignore_duplicates: bool = False) \
             -> Tuple[str, List[Any]]:
+        if upsert and ignore_duplicates:
+            raise ValueError('Pick one of `upsert` and `ignore_duplicates`.')
         attrs = []
         values = []
         for attr, value in item.items():
@@ -131,9 +144,25 @@ class PostgresRepository(Repository):
         attrs = ','.join(attrs)
         value_placeholders = ['%s'] * len(values)
         value_placeholders = ','.join(value_placeholders)
-        sql = f'INSERT INTO {self.table_name} ' \
+        sql = f'INSERT INTO {self.table_name} AS tn ' \
               f'({attrs}) ' \
-              f'VALUES ({value_placeholders});'
+              f'VALUES ({value_placeholders})'
+        if ignore_duplicates:
+            primary_keys = ','.join(self.primary_keys)
+            sql += f' ON CONFLICT ({primary_keys}) DO NOTHING;'
+        elif upsert:
+            primary_keys = ','.join(self.primary_keys)
+            update_statement, update_values = self._get_update_sql_and_values(
+                item=item,
+                condition_keys=self.primary_keys,
+                update_keys=[k for k in item.keys()
+                             if k not in self.primary_keys],
+                include_table_name=False,
+                alias='tn')
+            sql += f' ON CONFLICT ({primary_keys}) DO {update_statement}'
+            values += update_values
+        else:
+            sql += ';'
         return sql, values
 
     def _map_item_in(self, item: MutableMapping) -> Dict:
@@ -147,23 +176,26 @@ class PostgresRepository(Repository):
             ignore_duplicates: bool = False,
             **kwargs):
         item = self._map_item_in(item)
-        sql, values = self._item_to_insert_statement(item)
-        try:
-            with self.connection_factory() as conn:
-                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                    _ = cursor.execute(sql, values)
-        except UniqueViolation as e:
-            if not ignore_duplicates:
-                raise e
+        sql, values = self._item_to_insert_statement(
+            item=item,
+            ignore_duplicates=ignore_duplicates,
+            upsert=False)
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                _ = cursor.execute(sql, values)
 
-    def add_many(self, items: List[MutableMapping], **kwargs):
-        # NOTE: unable to ignore duplicates - errors cannot continue, and
-        #  everything gets rolled back
+    def add_many(self,
+                 items: List[MutableMapping],
+                 ignore_duplicates: bool = False,
+                 **kwargs):
         with self.connection_factory() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 for item in items:
                     item = self._map_item_in(item)
-                    sql, values = self._item_to_insert_statement(item)
+                    sql, values = self._item_to_insert_statement(
+                        item=item,
+                        ignore_duplicates=ignore_duplicates,
+                        upsert=False)
                     _ = cursor.execute(sql, values)
 
     def all(self, **kwargs) -> Generator:
@@ -257,3 +289,19 @@ class PostgresRepository(Repository):
                     sql, values = self._get_update_sql_and_values(
                         item, condition_keys, update_keys)
                     cursor.execute(sql, values)
+
+    def upsert(self, item: MutableMapping, **kwargs):
+        item = self._map_item_in(item)
+        sql, values = self._item_to_insert_statement(item, upsert=True)
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                _ = cursor.execute(sql, values)
+
+    def upsert_many(self, items: List[MutableMapping], **kwargs):
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                for item in items:
+                    item = self._map_item_in(item)
+                    sql, values = self._item_to_insert_statement(
+                        item, upsert=True)
+                    _ = cursor.execute(sql, values)

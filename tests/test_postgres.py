@@ -15,7 +15,7 @@ class TestPostgresRepository(unittest.TestCase):
         }
         conditions, values = TweetPgsqlRepository._get_conditions_and_values(
             **kwargs)
-        expected_conditions = 'b = %s AND c = %s'
+        expected_conditions = 'b = %s, c = %s'
         self.assertEqual(expected_conditions, conditions)
         expected_values = [1, 'three']
         self.assertEqual(expected_values, values)
@@ -195,9 +195,11 @@ class TestPostgresRepository(unittest.TestCase):
         repo.add(tweet)
         result = repo.get(1)
         self.assertEqual('a', result['label'])
+        tweet['tweet'] = 'edited tweet'
         tweet['label'] = 'b'
-        repo.update(tweet, ['tweet_id'], ['label'])
+        repo.update(tweet, ['tweet_id'], ['tweet', 'label'])
         result = repo.get(1)
+        self.assertEqual('edited tweet', result['tweet'])
         self.assertEqual('b', result['label'])
 
     def test_update_many_items(self):
@@ -215,6 +217,48 @@ class TestPostgresRepository(unittest.TestCase):
         tweet1['label'] = 'b'
         tweet2['label'] = 'b'
         repo.update_many([tweet1, tweet2], ['tweet_id'], ['label'])
+        result = repo.get(1)
+        self.assertEqual('b', result['label'])
+        result = repo.get(2)
+        self.assertEqual('b', result['label'])
+
+    def test_upsert_ok_when_not_exists(self):
+        db_name = 'test_upsert_ok_when_not_exists'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1', 'label': 'a'}
+        repo.upsert(tweet)
+        result = repo.get(1)
+        self.assertEqual(tweet, result)
+
+    def test_upsert_ok_when_exists(self):
+        db_name = 'test_upsert_ok_when_exists'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet = {'tweet_id': 1, 'tweet': 'tweet1', 'label': 'a'}
+        repo.upsert(tweet)
+        result = repo.get(1)
+        self.assertEqual(tweet, result)
+        error = False
+        try:
+            repo.upsert(tweet)
+        except UniqueViolation:
+            error = True
+        self.assertFalse(error)
+        result = repo.get(1)
+        self.assertEqual(tweet, result)
+
+    def test_upsert_many(self):
+        db_name = 'test_upsert_many'
+        create_test_database(db_name)
+        repo = TweetPgsqlRepository(db_name=db_name)
+        tweet1 = {'tweet_id': 1, 'tweet': 'tweet1', 'label': 'a'}
+        repo.add(tweet1)
+
+        tweet1['label'] = 'b'
+        tweet2 = {'tweet_id': 2, 'tweet': 'tweet2', 'label': 'b'}
+        repo.upsert_many([tweet1, tweet2])
+
         result = repo.get(1)
         self.assertEqual('b', result['label'])
         result = repo.get(2)

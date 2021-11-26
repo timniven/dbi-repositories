@@ -169,3 +169,14 @@ class TestMongoRepository(unittest.TestCase):
         ids = set([x['id'] for x in tweets])
         expected = {1, 2}
         self.assertSetEqual(expected, ids)
+
+    def test_upsert(self):
+        repo = TweetMongoRepository('test_search')
+        tweet = {'id': 1, 'text': 'tweet1', 'label': 'a'}
+        repo.add(tweet)
+        result = repo.get(1)
+        self.assertEqual('a', result['label'])
+        tweet['label'] = 'b'
+        repo.upsert(tweet)
+        result = repo.get(1)
+        self.assertEqual('b', result['label'])
