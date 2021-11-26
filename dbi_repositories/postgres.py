@@ -88,7 +88,10 @@ class PostgresRepository(Repository):
         self.primary_keys = primary_keys
 
     @staticmethod
-    def _get_conditions_and_values(alias: Optional[str] = None, **kwargs) \
+    def _get_conditions_and_values(
+            alias: Optional[str] = None,
+            join_char: str = ', ',
+            **kwargs) \
             -> Tuple[str, List[Any]]:
         conditions = []
         values = []
@@ -98,7 +101,7 @@ class PostgresRepository(Repository):
             if value:  # sometimes values can be None - don't take those
                 conditions.append(f'{attr} = %s')
                 values.append(value)
-        conditions = ', '.join(conditions)
+        conditions = join_char.join(conditions)
         return conditions, values
 
     @staticmethod
@@ -120,7 +123,10 @@ class PostgresRepository(Repository):
         update_conditions, update_values = \
             self._get_conditions_and_values(**update)
         where_conditions, where_values = \
-            self._get_conditions_and_values(alias=alias, **where)
+            self._get_conditions_and_values(
+                alias=alias,
+                join_char=' AND ',
+                **where)
         values = update_values + where_values
         sql = 'UPDATE '
         if include_table_name:
@@ -260,7 +266,9 @@ class PostgresRepository(Repository):
     def search(self, *args, **kwargs) \
             -> Generator:
         # NOTE: only handles `=` conditions
-        conditions, values = self._get_conditions_and_values(**kwargs)
+        conditions, values = self._get_conditions_and_values(
+            join_char=' AND ',
+            **kwargs)
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table_name} WHERE {conditions};'
         with self.connection_factory() as conn:

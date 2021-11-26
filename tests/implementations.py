@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 from typing import Dict, Optional, List
 
@@ -47,6 +48,18 @@ class TweetPgsqlRepository(PostgresRepository):
             tweet_id=tweet_id,
             tweet=tweet,
             projection=projection)
+
+
+class TweetStatsRepository(PostgresRepository):
+
+    def __init__(self, db_name: str):
+        super().__init__(
+            connection_factory=get_test_connection_factory(db_name=db_name),
+            table_name='tweet_stats',
+            primary_keys=['tweet_id', 'collected_at'])
+
+    def get(self, tweet_id: int, collected_at: datetime):
+        return super().get(tweet_id=tweet_id, collected_at=collected_at)
 
 
 class TweetMongoRepository(MongoRepository):

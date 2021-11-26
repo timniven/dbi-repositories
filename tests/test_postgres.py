@@ -1,8 +1,10 @@
+from datetime import datetime
 import unittest
 
 from psycopg2.errors import UniqueViolation
 
-from tests.implementations import create_test_database, TweetPgsqlRepository
+from tests.implementations import create_test_database, TweetPgsqlRepository, \
+    TweetStatsRepository
 
 
 class TestPostgresRepository(unittest.TestCase):
@@ -263,3 +265,16 @@ class TestPostgresRepository(unittest.TestCase):
         self.assertEqual('b', result['label'])
         result = repo.get(2)
         self.assertEqual('b', result['label'])
+
+    def test_upsert_with_two_primary_keys(self):
+        db_name = 'test_upsert_with_two_primary_keys'
+        create_test_database(db_name)
+        repo = TweetStatsRepository(db_name=db_name)
+        now = datetime.now()
+        tweet_stats = {
+            'tweet_id': 1,
+            'collected_at': now,
+            'num_likes': 1}
+        repo.upsert(tweet_stats)
+        result = repo.get(1, now)
+        self.assertEqual(tweet_stats, result)
