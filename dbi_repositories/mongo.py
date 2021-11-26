@@ -123,10 +123,15 @@ class MongoRepository(Repository):
             yield x
 
     def upsert(self, item: MutableMapping, **kwargs):
+        if '_id' not in item:
+            if self._id_attr:
+                item['_id'] = item[self._id_attr]
+            else:
+                raise ValueError('Unable to infer _id. Specify in constructor.')
         self.collection.replace_one(
             filter={'_id': item['_id']},
             replacement=item,
-            upsert=False)
+            upsert=True)
 
     def update_many(self, items: List[MutableMapping], **kwargs):
         raise NotImplementedError('Have not found a good way yet.')

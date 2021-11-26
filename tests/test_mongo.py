@@ -173,7 +173,7 @@ class TestMongoRepository(unittest.TestCase):
     def test_upsert(self):
         repo = TweetMongoRepository('test_search')
         tweet = {'id': 1, 'text': 'tweet1', 'label': 'a'}
-        repo.add(tweet)
+        repo.upsert(tweet)
         result = repo.get(1)
         self.assertEqual('a', result['label'])
         tweet['label'] = 'b'
