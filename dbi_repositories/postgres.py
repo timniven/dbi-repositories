@@ -128,7 +128,7 @@ class PostgresRepository(Repository):
         for attr, value in kwargs.items():
             if alias:
                 attr = f'{alias}.{attr}'
-            if value:  # sometimes values can be None - don't take those
+            if value is not None:
                 conditions.append(f'{attr} = %s')
                 values.append(value)
         conditions = join_char.join(conditions)
@@ -146,12 +146,19 @@ class PostgresRepository(Repository):
                                    condition_keys: List[str],
                                    update_keys: List[str],
                                    include_table_name: bool = True,
-                                   alias: Optional[str] = None) \
+                                   alias: Optional[str] = None,
+                                   debug: bool = False) \
             -> Tuple[str, List[Any]]:
+        if debug:
+            print(update_keys)
         update = {k: item[k] for k in update_keys}
+        if debug:
+            print(update)
         where = {k: item[k] for k in condition_keys}
         update_conditions, update_values = \
             self._get_conditions_and_values(**update)
+        if debug:
+            print(update_conditions)
         where_conditions, where_values = \
             self._get_conditions_and_values(
                 alias=alias,

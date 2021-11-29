@@ -52,7 +52,7 @@ class TweetPgsqlRepository(PostgresRepository):
 
 class TweetStatsRepository(PostgresRepository):
 
-    def __init__(self, db_name: str):
+    def __init__(self, db_name: str = 'test'):
         super().__init__(
             connection_factory=get_test_connection_factory(db_name=db_name),
             table_name='tweet_stats',

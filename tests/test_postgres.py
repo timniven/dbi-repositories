@@ -7,6 +7,18 @@ from tests.implementations import create_test_database, TweetPgsqlRepository, \
     TweetStatsRepository
 
 
+class TestItemToInsertStatement(unittest.TestCase):
+
+    def test_trouble_case(self):
+        repo = TweetStatsRepository()
+        item = {
+            'tweet_id': 'Ugx7w7FYrLQILWq-TE14AaABAg',
+            'collected_at': datetime(2021, 11, 29, 3, 13, 53, 809005),
+            'num_likes': 0}
+        sql, _ = repo._item_to_insert_statement(item, upsert=True)
+        self.assertIn('SET num_likes = ', sql)
+
+
 class TestPostgresRepository(unittest.TestCase):
 
     def test_get_conditions_and_values(self):
