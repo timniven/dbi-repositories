@@ -112,7 +112,10 @@ class PostgresRepository(Repository):
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(sql, values)
                 item = cursor.fetchone()
-                return self._map_item_out(dict(item))
+                if item:
+                    return self._map_item_out(dict(item))
+                else:
+                    return None
 
     @staticmethod
     def _get_conditions_and_values(
@@ -274,13 +277,12 @@ class PostgresRepository(Repository):
                 return result['count'] > 0
 
     def get(self, *args, **kwargs) \
-            -> Union[Dict, None]:
-        items = self.search(**kwargs)
-        try:
-            item = next(items)
-            return item
-        except StopIteration:
-            return None
+            -> Union[MutableMapping, None]:
+        conditions, values = self._get_conditions_and_values(
+            join_char=' AND ',
+            **kwargs)
+        sql = f'SELECT * FROM {self.table_name} WHERE {conditions};'
+        return self._execute_single_return(sql, values)
 
     def search(self, *args, **kwargs) -> Generator:
         # NOTE: only handles `=` conditions
