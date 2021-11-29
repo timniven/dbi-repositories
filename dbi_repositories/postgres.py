@@ -87,6 +87,33 @@ class PostgresRepository(Repository):
         self.table_name = table_name
         self.primary_keys = primary_keys
 
+    def _execute_generator_return(self,
+                                  sql: str,
+                                  values: Optional[List[Any]] = None) \
+            -> Generator:
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+                for item in cursor:
+                    yield self._map_item_out(dict(item))
+
+    def _execute_no_return(self,
+                           sql: str,
+                           values: Optional[List[Any]] = None) \
+            -> None:
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+
+    def _execute_single_return(self,
+                               sql: str,
+                               values: Optional[List[Any]] = None) -> Any:
+        with self.connection_factory() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(sql, values)
+                item = cursor.fetchone()
+                return self._map_item_out(dict(item))
+
     @staticmethod
     def _get_conditions_and_values(
             alias: Optional[str] = None,
@@ -180,15 +207,13 @@ class PostgresRepository(Repository):
     def add(self,
             item: MutableMapping,
             ignore_duplicates: bool = False,
-            **kwargs):
+            **kwargs) -> None:
         item = self._map_item_in(item)
         sql, values = self._item_to_insert_statement(
             item=item,
             ignore_duplicates=ignore_duplicates,
             upsert=False)
-        with self.connection_factory() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                _ = cursor.execute(sql, values)
+        self._execute_no_return(sql, values)
 
     def add_many(self,
                  items: List[MutableMapping],
@@ -207,13 +232,9 @@ class PostgresRepository(Repository):
     def all(self, **kwargs) -> Generator:
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table_name};'
-        with self.connection_factory() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(sql)
-                for item in cursor:
-                    yield self._map_item_out(dict(item))
+        return self._execute_generator_return(sql)
 
-    def commit(self):
+    def commit(self) -> None:
         logging.warning(
             'commit() is not implemented for '
             'dbi_repositories.postgres.PostgresRepository. '
@@ -231,9 +252,7 @@ class PostgresRepository(Repository):
     def delete(self, conditions: Dict, **kwargs) -> None:
         conditions, values = self._get_conditions_and_values(**conditions)
         sql = f'DELETE FROM {self.table_name} WHERE {conditions};'
-        with self.connection_factory() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(sql, values)
+        self._execute_no_return(sql, values)
 
     def delete_many(self, conditions: List[Dict], **kwargs) -> None:
         with self.connection_factory() as conn:
@@ -263,19 +282,14 @@ class PostgresRepository(Repository):
         except StopIteration:
             return None
 
-    def search(self, *args, **kwargs) \
-            -> Generator:
+    def search(self, *args, **kwargs) -> Generator:
         # NOTE: only handles `=` conditions
         conditions, values = self._get_conditions_and_values(
             join_char=' AND ',
             **kwargs)
         selector = self._get_selector(**kwargs)
         sql = f'SELECT {selector} FROM {self.table_name} WHERE {conditions};'
-        with self.connection_factory() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(sql, values)
-                for item in cursor:
-                    yield self._map_item_out(dict(item))
+        return self._execute_generator_return(sql, values)
 
     def update(self,
                item: MutableMapping,
@@ -283,9 +297,7 @@ class PostgresRepository(Repository):
                update_keys: List[str]) -> None:
         sql, values = self._get_update_sql_and_values(
             item, condition_keys, update_keys)
-        with self.connection_factory() as conn:
-            with conn.cursor() as cursor:
-                cursor.execute(sql, values)
+        self._execute_no_return(sql, values)
 
     def update_many(self,
                     items: List[MutableMapping],
@@ -298,14 +310,12 @@ class PostgresRepository(Repository):
                         item, condition_keys, update_keys)
                     cursor.execute(sql, values)
 
-    def upsert(self, item: MutableMapping, **kwargs):
+    def upsert(self, item: MutableMapping, **kwargs) -> None:
         item = self._map_item_in(item)
         sql, values = self._item_to_insert_statement(item, upsert=True)
-        with self.connection_factory() as conn:
-            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                _ = cursor.execute(sql, values)
+        self._execute_no_return(sql, values)
 
-    def upsert_many(self, items: List[MutableMapping], **kwargs):
+    def upsert_many(self, items: List[MutableMapping], **kwargs) -> None:
         with self.connection_factory() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 for item in items:
