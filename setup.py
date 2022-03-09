@@ -15,5 +15,5 @@ setuptools.setup(
     description='Reusable Repository pattern implementations for multiple DBs.',
     url=f'https://github.com/timniven/dbi-repositories.git#{version}',
     packages=setuptools.find_packages(),
-    python_requires='>=3.9.5',
+    python_requires='>=3.8',
     install_requires=required)
