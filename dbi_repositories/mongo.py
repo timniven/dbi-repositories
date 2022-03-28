@@ -35,7 +35,10 @@ class MongoRepository(Repository):
 
         self.client = client
         self.db = self.client[db_name]
-        self.collection = self.db[collection_name]
+        self.collection = self._get_collection(collection_name)
+
+    def _get_collection(self, collection_name: str):
+        return self.db[collection_name]
 
     def add(self,
             item: MutableMapping,
