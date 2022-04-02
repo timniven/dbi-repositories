@@ -23,14 +23,19 @@ class ConnectionFactory:
                  port: int,
                  user: str,
                  password: str,
-                 db_name: str):
+                 db_name: str,
+                 ssl: bool = False):
         self.host = host
         self.port = port
         self.user = user
         self.password = password
         self.db_name = db_name
+        self.ssl = ssl
 
-    def __call__(self, db_name: Optional[str] = None):
+    def __call__(
+            self,
+            db_name: Optional[str] = None
+    ) -> extensions.connection:
         if not db_name:
             db_name = self.db_name
         return get_connection(
@@ -38,21 +43,26 @@ class ConnectionFactory:
             port=self.port,
             user=self.user,
             password=self.password,
-            db_name=db_name)
+            db_name=db_name,
+            ssl=self.ssl)
 
 
-def get_connection(host: str,
-                   port: int,
-                   user: str,
-                   password: str,
-                   db_name: str):
+def get_connection(
+        host: str,
+        port: int,
+        user: str,
+        password: str,
+        db_name: str,
+        ssl: bool = True
+) -> extensions.connection:
+    # NOTE: on sslmode: https://ankane.org/postgres-sslmode-explained
     return psycopg2.connect(
         host=host,
         port=port,
         user=user,
         password=password,
         dbname=db_name,
-        sslmode='require')
+        sslmode='require' if ssl else 'allow')
 
 
 def create_db(connection_factory: ConnectionFactory,
