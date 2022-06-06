@@ -75,3 +75,18 @@ class TweetMongoRepository(MongoRepository):
             db_name='test_mongo_twitter',
             collection_name=collection_name,
             _id_attr='id')
+
+
+class WeiboMongoRepository(MongoRepository):
+
+    def __init__(self, collection_name: str):
+        client = get_client(
+            host=os.environ['MONGO_HOST'],
+            port=int(os.environ['MONGO_PORT']),
+            username=os.environ['MONGO_USERNAME'],
+            password=os.environ['MONGO_PASSWORD'])
+        super().__init__(
+            client=client,
+            db_name='test_weibo_twitter',
+            collection_name=collection_name,
+            _id_attr='mid')

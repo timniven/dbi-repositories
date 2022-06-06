@@ -1,8 +1,9 @@
+import json
 import unittest
 
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 
-from tests.implementations import TweetMongoRepository
+from tests.implementations import TweetMongoRepository, WeiboMongoRepository
 
 
 class TestMongoRepository(unittest.TestCase):
@@ -51,6 +52,17 @@ class TestMongoRepository(unittest.TestCase):
             {'_id': 2, 'id': 2, 'text': 'tweet2'},
         ]
         self.assertEqual(expected, tweets)
+
+    def test_add_many_sets_id(self):
+        repo = WeiboMongoRepository('test_add_many')
+        with open('tests/data/weibo.json') as f:
+            data = json.loads(f.read())
+        self.assertEqual(2, len(data))
+        repo.add_many(data)
+        posts = list(repo.all())
+        self.assertEqual(2, len(posts))
+        for x in posts:
+            self.assertEqual(x['_id'], x['mid'])
 
     def test_add_many_errors_duplicate_when_requested(self):
         repo = TweetMongoRepository(
