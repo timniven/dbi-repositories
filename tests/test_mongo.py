@@ -55,12 +55,12 @@ class TestMongoRepository(unittest.TestCase):
 
     def test_add_many_sets_id(self):
         repo = WeiboMongoRepository('test_add_many')
-        with open('tests/data/weibo.json') as f:
+        with open('tests/data/Result_6.json') as f:
             data = json.loads(f.read())
-        self.assertEqual(2, len(data))
+        self.assertEqual(5, len(data))
         repo.add_many(data)
         posts = list(repo.all())
-        self.assertEqual(2, len(posts))
+        self.assertEqual(5, len(posts))
         for x in posts:
             self.assertEqual(x['_id'], x['mid'])
 

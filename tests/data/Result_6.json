@@ -1,0 +1,2353 @@
+[
+  {
+    "_id": {"$oid": "62908bc6f8e35f41d0127834"},
+    "analysis_extra": "seqid:95262310|type:62|t:|pos:3-0-0|q:老兵维权|ext:&mid=4773701009278111&qtime=1653640034&|ppos:0-0",
+    "attitudes_count": 0,
+    "bid": "LuViACVEX",
+    "can_edit": false,
+    "comment_manage_info": {
+      "comment_permission_type": -1,
+      "approval_comment_type": 0,
+      "comment_sort_type": 0
+    },
+    "comments_count": 0,
+    "content_auth": 0,
+    "created_at": "Fri May 27 11:34:34 +0800 2022",
+    "darwin_tags": [],
+    "digit_attr": null,
+    "dispatch_ctrl": null,
+    "extern_safe": 0,
+    "favorited": false,
+    "filter_overseas_weibo": 0,
+    "id": "4773701009278111",
+    "isLongText": false,
+    "is_paid": false,
+    "itemid": null,
+    "kwfilter_pass": "0",
+    "mblog_vip_type": 0,
+    "mblogtype": 0,
+    "mid": "4773701009278111",
+    "mlevel": 0,
+    "new_comment_style": 0,
+    "number_display_strategy": {
+      "apply_scenario_flag": 3,
+      "display_text_min_number": 1000000,
+      "display_text": "100万+"
+    },
+    "pending_approval_count": 0,
+    "pic_ids": [],
+    "pic_num": 0,
+    "pid": 4755981177986325,
+    "pidstr": "4755981177986325",
+    "raw_text": "//@清涟8:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "region_name": "浙江",
+    "region_opt": 0,
+    "repost_type": 1,
+    "reposts_count": 0,
+    "reprint_cmt_count": 0,
+    "retweeted_status": {
+      "visible": {
+        "type": 0,
+        "list_id": 0
+      },
+      "created_at": "Fri Apr 08 13:53:44 +0800 2022",
+      "id": "4755979026302538",
+      "mid": "4755979026302538",
+      "can_edit": false,
+      "show_additional_indication": 0,
+      "text": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占 ...<a href=\"/status/4755979026302538\">全文</a>",
+      "textLength": 1084,
+      "source": "前后2000万 OPPO R11",
+      "favorited": false,
+      "pic_ids": ["0088LB6Nly1h129pphi2lj30lk0eltaq", "0088LB6Nly1h129ppsoq3j314g200ttf", "0088LB6Nly1h129pqe6agj31jk2234qp", "0088LB6Nly1h129pqvqmqj31jk15o7ud", "0088LB6Nly1h129pr8k8xj314g200tp7", "0088LB6Nly1h129prpv82j31jk15otrk", "0088LB6Nly1h129ps51rhj30u01hcndk", "0088LB6Nly1h129pslzb6j30u01hck7o", "0088LB6Nly1h129psxnzmj30u01hcwur"],
+      "thumbnail_pic": "https://wx4.sinaimg.cn/thumbnail/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "bmiddle_pic": "http://wx4.sinaimg.cn/bmiddle/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "original_pic": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "is_paid": false,
+      "mblog_vip_type": 0,
+      "user": {
+        "id": 7458617409,
+        "screen_name": "清涟8",
+        "profile_image_url": "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg?KID=imgbed,tva&Expires=1653650834&ssig=kgAVryFJBT",
+        "profile_url": "https://m.weibo.cn/u/7458617409?uid=7458617409&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "statuses_count": 99582,
+        "verified": false,
+        "verified_type": -1,
+        "close_blue_v": false,
+        "description": "",
+        "gender": "f",
+        "mbtype": 12,
+        "urank": 0,
+        "mbrank": 4,
+        "follow_me": false,
+        "following": false,
+        "follow_count": 5800,
+        "followers_count": "2320",
+        "followers_count_str": "2320",
+        "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+        "avatar_hd": "https://wx2.sinaimg.cn/orj480/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg",
+        "like": false,
+        "like_me": false,
+        "badge": {
+          "user_name_certificate": 1,
+          "wenda_v2": 1,
+          "pc_new": 6,
+          "party_cardid_state": 2,
+          "aoyun_2021": 1,
+          "dailu_2021": 1,
+          "yinyuejie21_2021": 1,
+          "hongbaofei2022_2021": 2,
+          "nihaochuntian_2022": 1
+        }
+      },
+      "picStatus": "0:1,1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1",
+      "reposts_count": 8883,
+      "comments_count": 85,
+      "reprint_cmt_count": 0,
+      "attitudes_count": 69,
+      "pending_approval_count": 0,
+      "isLongText": true,
+      "longText": {
+        "longTextContent": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占有承包合同的果园，把南侧靠水塘的果园，毁园造路，强行栽种他们的绿化树。把有用地手序的果园看护房以违建被大信综合执法强拆，(当年我是村里唯一交140元办用地许可的看护房，是期房，30年后自行拆除，可到即墨土地局查实。)现在果园被铁丝网圈起强占，3亩口粮地竟然让村委下侵占集体土地收回通知书，毁我果苗。收地是以流转之名行征收之实！逼签致使我诱发脑梗住院，至今未停药。拆迁己经三年了，拆迁办多次上门逼签，派出所也随行施压。2020年冬天，我被逼无奈同意原村主任经领导同意协商好的赔偿费。但他们拖着不解决，2021年夏，现村书记和原村主任找我称领导不答应去年的口头协议了，还是原先赔偿标准，如不答应，九年承包期一过，一分钱也拿不到！占我地，强拆我房，安抚哄骗我不要告，政府会解决。达成的口头协议也不作数！这是要逼死人！！求领导，为民作主！还我风烛残年老兵一个公道！！李延术手机号13045017621 http://t.cn/R66p35Q http://t.cn/R66p35Q",
+        "url_objects": [
+          {
+            "url_ori": "http://t.cn/R66p35Q",
+            "object_id": "1022:1001018008637020000000000",
+            "info": {
+              "url_short": "http://t.cn/R66p35Q",
+              "url_long": "http://weibo.com/p/1001018008637020000000000",
+              "type": 36,
+              "result": true,
+              "title": "",
+              "description": "",
+              "last_modified": 1653618157,
+              "transcode": 0,
+              "ext_status": 0,
+              "trusted_state": 1
+            },
+            "object": {
+              "object_id": "1022:1001018008637020000000000",
+              "request_oid": "1022:1001018008637020000000000",
+              "containerid": "1001018008637020000000000",
+              "object_domain_id": "1022",
+              "object_type": "place",
+              "safe_status": 1,
+              "show_status": "10",
+              "act_status": "00",
+              "last_modified": "Fri May 27 10:22:37 CST 2022",
+              "timestamp": 1653618157286,
+              "uuid": 3852495213353177,
+              "uuidstr": "3852495213353177",
+              "activate_status": "0",
+              "object": {
+                "summary": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+                "image": {
+                  "width": "88",
+                  "url": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                  "height": "88"
+                },
+                "address": {
+                  "street_address": "青岛市，旧称胶澳 ，又被称为岛城...",
+                  "country": "中国",
+                  "formatted": "青岛市，旧称胶澳 ，又被称...",
+                  "locality": "青岛市",
+                  "telephone": "",
+                  "region": "山东省",
+                  "postal_code": "",
+                  "fax": "",
+                  "email": ""
+                },
+                "object_type": "place",
+                "target_url": "http://weibo.com/p/1001018008637020000000000",
+                "mobile": {
+                  "page_id": "1001018008637020000000000",
+                  "url": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "name": "青岛",
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  },
+                  "card": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "contents": ["青岛同城", "", "本地热门资讯、新鲜事、有缘人"],
+                    "is_asyn": 0,
+                    "pic": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                    "type": 0,
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  }
+                },
+                "checkin_num": "1206万",
+                "display_name": "青岛",
+                "url": "http://weibo.com/p/1001018008637020000000000",
+                "biz": {
+                  "biz_id": "100101",
+                  "containerid": "1001018008637020000000000"
+                },
+                "id": "1022:1001018008637020000000000",
+                "position": "36.082982 120.355173",
+                "keyword": "青岛[地点]"
+              },
+              "is_longtext": false
+            },
+            "like_count": 960950,
+            "isActionType": false,
+            "follower_count": 0,
+            "asso_like_count": 0,
+            "card_info_un_integrity": false,
+            "super_topic_status_count": 0,
+            "super_topic_photo_count": 0,
+            "search_topic_count": 0,
+            "search_topic_read_count": 0
+          }
+        ]
+      },
+      "mlevel": 0,
+      "darwin_tags": [],
+      "mblogtype": 0,
+      "rid": "9_0_0_5055157575184745204_0_0_0",
+      "cardid": "star_1522",
+      "number_display_strategy": {
+        "apply_scenario_flag": 3,
+        "display_text_min_number": 1000000,
+        "display_text": "100万+"
+      },
+      "content_auth": 0,
+      "safe_tags": 4096,
+      "comment_manage_info": {
+        "comment_permission_type": -1,
+        "approval_comment_type": 0,
+        "comment_sort_type": 0
+      },
+      "pic_num": 9,
+      "new_comment_style": 0,
+      "status": 0,
+      "page_info": {
+        "type": "place",
+        "icon": "https://h5.sinaimg.cn/upload/2016/03/15/196/timeline_icon_location_default.png",
+        "page_pic": {
+          "width": "88",
+          "url": "https://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+          "height": "88"
+        },
+        "page_url": "https://m.weibo.cn/p/index?containerid=23065700428008637020000000000&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "page_title": "青岛",
+        "content1": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+        "content2": "本地热门资讯、新鲜事、有缘人"
+      },
+      "pics": [
+        {
+          "pid": "0088LB6Nly1h129pphi2lj30lk0eltaq",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 399,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+            "geo": {
+              "width": "776",
+              "height": "525",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ppsoq3j314g200ttf",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqe6agj31jk2234qp",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 480,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "2667",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqvqmqj31jk15o7ud",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pr8k8xj314g200tp7",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129prpv82j31jk15otrk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ps51rhj30u01hcndk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pslzb6j30u01hck7o",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129psxnzmj30u01hcwur",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        }
+      ],
+      "bid": "LnugKqrzQ"
+    },
+    "rid": "0_0_0_5055157575184745204_0_0_0",
+    "safe_tags": 4096,
+    "show_additional_indication": 0,
+    "source": "OPPO A92s",
+    "status": 0,
+    "text": "//<a href='/n/清涟8'>@清涟8</a>:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "user": {
+      "id": 7613400043,
+      "screen_name": "3正义的力量3",
+      "profile_image_url": "https://tvax4.sinaimg.cn/crop.0.0.996.996.180/008jf38Tly8gqsbcawfxqj30ro0rojsi.jpg?KID=imgbed,tva&Expires=1653650834&ssig=R95cTOEIGK",
+      "profile_url": "https://m.weibo.cn/u/7613400043?uid=7613400043&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+      "statuses_count": 21584,
+      "verified": false,
+      "verified_type": -1,
+      "close_blue_v": false,
+      "description": "抱团取暖，互粉互转✊\uD83C\uDFFB✊\uD83C\uDFFB✊\uD83C\uDFFB",
+      "gender": "m",
+      "mbtype": 2,
+      "urank": 0,
+      "mbrank": 3,
+      "follow_me": false,
+      "following": false,
+      "follow_count": 1576,
+      "followers_count": "1709",
+      "followers_count_str": "1709",
+      "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+      "avatar_hd": "https://wx4.sinaimg.cn/orj480/008jf38Tly8gqsbcawfxqj30ro0rojsi.jpg",
+      "like": false,
+      "like_me": false,
+      "badge": {
+        "user_name_certificate": 1,
+        "party_cardid_state": 1
+      }
+    },
+    "visible": {
+      "type": 0,
+      "list_id": 0
+    }
+  },
+  {
+    "_id": {"$oid": "62908bc6f8e35f41d0127835"},
+    "analysis_extra": "seqid:95262310|type:62|t:|pos:3-0-1|q:老兵维权|ext:&mid=4773697489208724&qtime=1653640034&|ppos:1-1",
+    "attitudes_count": 0,
+    "bid": "LuVcUCDBO",
+    "can_edit": false,
+    "comment_manage_info": {
+      "comment_permission_type": -1,
+      "approval_comment_type": 0,
+      "comment_sort_type": 0
+    },
+    "comments_count": 0,
+    "content_auth": 0,
+    "created_at": "Fri May 27 11:20:34 +0800 2022",
+    "darwin_tags": [],
+    "digit_attr": null,
+    "dispatch_ctrl": null,
+    "extern_safe": 0,
+    "favorited": false,
+    "filter_overseas_weibo": 0,
+    "id": "4773697489208724",
+    "isLongText": false,
+    "is_paid": false,
+    "itemid": null,
+    "kwfilter_pass": "0",
+    "mblog_vip_type": 0,
+    "mblogtype": 0,
+    "mid": "4773697489208724",
+    "mlevel": 0,
+    "new_comment_style": 0,
+    "number_display_strategy": {
+      "apply_scenario_flag": 3,
+      "display_text_min_number": 1000000,
+      "display_text": "100万+"
+    },
+    "pending_approval_count": 0,
+    "pic_ids": [],
+    "pic_num": 0,
+    "pid": 4755981177986325,
+    "pidstr": "4755981177986325",
+    "raw_text": "//@清涟8: 何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "region_name": "安徽",
+    "region_opt": 0,
+    "repost_type": 3,
+    "reposts_count": 0,
+    "reprint_cmt_count": 0,
+    "retweeted_status": {
+      "visible": {
+        "type": 0,
+        "list_id": 0
+      },
+      "created_at": "Fri Apr 08 13:53:44 +0800 2022",
+      "id": "4755979026302538",
+      "mid": "4755979026302538",
+      "can_edit": false,
+      "show_additional_indication": 0,
+      "text": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占 ...<a href=\"/status/4755979026302538\">全文</a>",
+      "textLength": 1084,
+      "source": "前后2000万 OPPO R11",
+      "favorited": false,
+      "pic_ids": ["0088LB6Nly1h129pphi2lj30lk0eltaq", "0088LB6Nly1h129ppsoq3j314g200ttf", "0088LB6Nly1h129pqe6agj31jk2234qp", "0088LB6Nly1h129pqvqmqj31jk15o7ud", "0088LB6Nly1h129pr8k8xj314g200tp7", "0088LB6Nly1h129prpv82j31jk15otrk", "0088LB6Nly1h129ps51rhj30u01hcndk", "0088LB6Nly1h129pslzb6j30u01hck7o", "0088LB6Nly1h129psxnzmj30u01hcwur"],
+      "thumbnail_pic": "https://wx4.sinaimg.cn/thumbnail/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "bmiddle_pic": "http://wx4.sinaimg.cn/bmiddle/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "original_pic": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "is_paid": false,
+      "mblog_vip_type": 0,
+      "user": {
+        "id": 7458617409,
+        "screen_name": "清涟8",
+        "profile_image_url": "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg?KID=imgbed,tva&Expires=1653650834&ssig=kgAVryFJBT",
+        "profile_url": "https://m.weibo.cn/u/7458617409?uid=7458617409&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "statuses_count": 99582,
+        "verified": false,
+        "verified_type": -1,
+        "close_blue_v": false,
+        "description": "",
+        "gender": "f",
+        "mbtype": 12,
+        "urank": 0,
+        "mbrank": 4,
+        "follow_me": false,
+        "following": false,
+        "follow_count": 5800,
+        "followers_count": "2320",
+        "followers_count_str": "2320",
+        "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+        "avatar_hd": "https://wx2.sinaimg.cn/orj480/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg",
+        "like": false,
+        "like_me": false,
+        "badge": {
+          "user_name_certificate": 1,
+          "wenda_v2": 1,
+          "pc_new": 6,
+          "party_cardid_state": 2,
+          "aoyun_2021": 1,
+          "dailu_2021": 1,
+          "yinyuejie21_2021": 1,
+          "hongbaofei2022_2021": 2,
+          "nihaochuntian_2022": 1
+        }
+      },
+      "picStatus": "0:1,1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1",
+      "reposts_count": 8883,
+      "comments_count": 85,
+      "reprint_cmt_count": 0,
+      "attitudes_count": 69,
+      "pending_approval_count": 0,
+      "isLongText": true,
+      "longText": {
+        "longTextContent": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占有承包合同的果园，把南侧靠水塘的果园，毁园造路，强行栽种他们的绿化树。把有用地手序的果园看护房以违建被大信综合执法强拆，(当年我是村里唯一交140元办用地许可的看护房，是期房，30年后自行拆除，可到即墨土地局查实。)现在果园被铁丝网圈起强占，3亩口粮地竟然让村委下侵占集体土地收回通知书，毁我果苗。收地是以流转之名行征收之实！逼签致使我诱发脑梗住院，至今未停药。拆迁己经三年了，拆迁办多次上门逼签，派出所也随行施压。2020年冬天，我被逼无奈同意原村主任经领导同意协商好的赔偿费。但他们拖着不解决，2021年夏，现村书记和原村主任找我称领导不答应去年的口头协议了，还是原先赔偿标准，如不答应，九年承包期一过，一分钱也拿不到！占我地，强拆我房，安抚哄骗我不要告，政府会解决。达成的口头协议也不作数！这是要逼死人！！求领导，为民作主！还我风烛残年老兵一个公道！！李延术手机号13045017621 http://t.cn/R66p35Q http://t.cn/R66p35Q",
+        "url_objects": [
+          {
+            "url_ori": "http://t.cn/R66p35Q",
+            "object_id": "1022:1001018008637020000000000",
+            "info": {
+              "url_short": "http://t.cn/R66p35Q",
+              "url_long": "http://weibo.com/p/1001018008637020000000000",
+              "type": 36,
+              "result": true,
+              "title": "",
+              "description": "",
+              "last_modified": 1653618157,
+              "transcode": 0,
+              "ext_status": 0,
+              "trusted_state": 1
+            },
+            "object": {
+              "object_id": "1022:1001018008637020000000000",
+              "request_oid": "1022:1001018008637020000000000",
+              "containerid": "1001018008637020000000000",
+              "object_domain_id": "1022",
+              "object_type": "place",
+              "safe_status": 1,
+              "show_status": "10",
+              "act_status": "00",
+              "last_modified": "Fri May 27 10:22:37 CST 2022",
+              "timestamp": 1653618157286,
+              "uuid": 3852495213353177,
+              "uuidstr": "3852495213353177",
+              "activate_status": "0",
+              "object": {
+                "summary": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+                "image": {
+                  "width": "88",
+                  "url": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                  "height": "88"
+                },
+                "address": {
+                  "street_address": "青岛市，旧称胶澳 ，又被称为岛城...",
+                  "country": "中国",
+                  "formatted": "青岛市，旧称胶澳 ，又被称...",
+                  "locality": "青岛市",
+                  "telephone": "",
+                  "region": "山东省",
+                  "postal_code": "",
+                  "fax": "",
+                  "email": ""
+                },
+                "object_type": "place",
+                "target_url": "http://weibo.com/p/1001018008637020000000000",
+                "mobile": {
+                  "page_id": "1001018008637020000000000",
+                  "url": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "name": "青岛",
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  },
+                  "card": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "contents": ["青岛同城", "", "本地热门资讯、新鲜事、有缘人"],
+                    "is_asyn": 0,
+                    "pic": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                    "type": 0,
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  }
+                },
+                "checkin_num": "1206万",
+                "display_name": "青岛",
+                "url": "http://weibo.com/p/1001018008637020000000000",
+                "biz": {
+                  "biz_id": "100101",
+                  "containerid": "1001018008637020000000000"
+                },
+                "id": "1022:1001018008637020000000000",
+                "position": "36.082982 120.355173",
+                "keyword": "青岛[地点]"
+              },
+              "is_longtext": false
+            },
+            "like_count": 960950,
+            "isActionType": false,
+            "follower_count": 0,
+            "asso_like_count": 0,
+            "card_info_un_integrity": false,
+            "super_topic_status_count": 0,
+            "super_topic_photo_count": 0,
+            "search_topic_count": 0,
+            "search_topic_read_count": 0
+          }
+        ]
+      },
+      "mlevel": 0,
+      "darwin_tags": [],
+      "mblogtype": 0,
+      "rid": "9_0_0_5055157575184745204_0_0_0",
+      "cardid": "star_1522",
+      "number_display_strategy": {
+        "apply_scenario_flag": 3,
+        "display_text_min_number": 1000000,
+        "display_text": "100万+"
+      },
+      "content_auth": 0,
+      "safe_tags": 4096,
+      "comment_manage_info": {
+        "comment_permission_type": -1,
+        "approval_comment_type": 0,
+        "comment_sort_type": 0
+      },
+      "pic_num": 9,
+      "new_comment_style": 0,
+      "status": 0,
+      "page_info": {
+        "type": "place",
+        "icon": "https://h5.sinaimg.cn/upload/2016/03/15/196/timeline_icon_location_default.png",
+        "page_pic": {
+          "width": "88",
+          "url": "https://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+          "height": "88"
+        },
+        "page_url": "https://m.weibo.cn/p/index?containerid=23065700428008637020000000000&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "page_title": "青岛",
+        "content1": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+        "content2": "本地热门资讯、新鲜事、有缘人"
+      },
+      "pics": [
+        {
+          "pid": "0088LB6Nly1h129pphi2lj30lk0eltaq",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 399,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+            "geo": {
+              "width": "776",
+              "height": "525",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ppsoq3j314g200ttf",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqe6agj31jk2234qp",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 480,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "2667",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqvqmqj31jk15o7ud",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pr8k8xj314g200tp7",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129prpv82j31jk15otrk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ps51rhj30u01hcndk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pslzb6j30u01hck7o",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129psxnzmj30u01hcwur",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        }
+      ],
+      "bid": "LnugKqrzQ"
+    },
+    "rid": "1_0_0_5055157575184745204_0_0_0",
+    "safe_tags": 4096,
+    "show_additional_indication": 0,
+    "source": "微博 weibo.com",
+    "status": 0,
+    "text": "//<a href='/n/清涟8'>@清涟8</a>: 何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "user": {
+      "id": 2519195132,
+      "screen_name": "井岗王J军",
+      "profile_image_url": "https://tva2.sinaimg.cn/crop.28.16.120.120.180/9627ddfcgw1eq3zjfy8gnj205k05kq32.jpg?KID=imgbed,tva&Expires=1653650834&ssig=iDq3TfpWn%2B",
+      "profile_url": "https://m.weibo.cn/u/2519195132?uid=2519195132&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+      "statuses_count": 40516,
+      "verified": false,
+      "verified_type": -1,
+      "close_blue_v": false,
+      "description": "草民王军合肥井岗人2014年4月5日遭遇半夜强拆，反映至今屡遭暴力威胁和迫害，请求有胆识干部媒体彻查此事还百姓公道，举报人王军电话13615696078",
+      "gender": "m",
+      "mbtype": 12,
+      "urank": 24,
+      "mbrank": 3,
+      "follow_me": false,
+      "following": false,
+      "follow_count": 5689,
+      "followers_count": "5964",
+      "followers_count_str": "5964",
+      "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+      "avatar_hd": "https://ww2.sinaimg.cn/orj480/9627ddfcgw1eq3zjfy8gnj205k05kq32.jpg",
+      "like": false,
+      "like_me": false,
+      "badge": {
+        "bind_taobao": 1,
+        "unread_pool": 1,
+        "unread_pool_ext": 1,
+        "user_name_certificate": 1,
+        "wenda_v2": 1,
+        "hongbao_2020": 2,
+        "feiyan_2020": 1,
+        "pc_new": 6,
+        "dailv_2020": 1,
+        "gongyi_2020": 2,
+        "china_2020": 1,
+        "zjszgf_2020": 1,
+        "hongbaofeifuniu_2021": 1,
+        "hongbaofeijika_2021": 1,
+        "lvzhilingyang_2021": 1,
+        "gaokao_2021": 1,
+        "party_cardid_state": 1,
+        "hongrenjie_2021": 1,
+        "aoyun_2021": 1,
+        "weibozhiyebobao_2021": 1,
+        "bddxrrdongaohui_2022": 1
+      }
+    },
+    "visible": {
+      "type": 0,
+      "list_id": 0
+    }
+  },
+  {
+    "_id": {"$oid": "62908bc6f8e35f41d0127836"},
+    "analysis_extra": "seqid:95262310|type:62|t:|pos:3-0-2|q:老兵维权|ext:&mid=4773695841899312&qtime=1653640034&|ppos:2-2",
+    "attitudes_count": 0,
+    "bid": "LuVag7Y64",
+    "can_edit": false,
+    "comment_manage_info": {
+      "comment_permission_type": -1,
+      "approval_comment_type": 0,
+      "comment_sort_type": 0
+    },
+    "comments_count": 0,
+    "content_auth": 0,
+    "created_at": "Fri May 27 11:14:02 +0800 2022",
+    "darwin_tags": [],
+    "digit_attr": null,
+    "dispatch_ctrl": null,
+    "extern_safe": 0,
+    "favorited": false,
+    "filter_overseas_weibo": 0,
+    "id": "4773695841899312",
+    "isLongText": false,
+    "is_paid": false,
+    "itemid": null,
+    "kwfilter_pass": "0",
+    "mblog_vip_type": 0,
+    "mblogtype": 0,
+    "mid": "4773695841899312",
+    "mlevel": 0,
+    "new_comment_style": 0,
+    "number_display_strategy": {
+      "apply_scenario_flag": 3,
+      "display_text_min_number": 1000000,
+      "display_text": "100万+"
+    },
+    "pending_approval_count": 0,
+    "pic_ids": [],
+    "pic_num": 0,
+    "pid": 4773689550181958,
+    "pidstr": "4773689550181958",
+    "raw_text": "//@南山荷锄翁来了_913: //@清涟8:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "region_name": "北京",
+    "region_opt": 0,
+    "repost_type": 3,
+    "reposts_count": 0,
+    "reprint_cmt_count": 0,
+    "retweeted_status": {
+      "visible": {
+        "type": 0,
+        "list_id": 0
+      },
+      "created_at": "Fri Apr 08 13:53:44 +0800 2022",
+      "id": "4755979026302538",
+      "mid": "4755979026302538",
+      "can_edit": false,
+      "show_additional_indication": 0,
+      "text": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占 ...<a href=\"/status/4755979026302538\">全文</a>",
+      "textLength": 1084,
+      "source": "前后2000万 OPPO R11",
+      "favorited": false,
+      "pic_ids": ["0088LB6Nly1h129pphi2lj30lk0eltaq", "0088LB6Nly1h129ppsoq3j314g200ttf", "0088LB6Nly1h129pqe6agj31jk2234qp", "0088LB6Nly1h129pqvqmqj31jk15o7ud", "0088LB6Nly1h129pr8k8xj314g200tp7", "0088LB6Nly1h129prpv82j31jk15otrk", "0088LB6Nly1h129ps51rhj30u01hcndk", "0088LB6Nly1h129pslzb6j30u01hck7o", "0088LB6Nly1h129psxnzmj30u01hcwur"],
+      "thumbnail_pic": "https://wx4.sinaimg.cn/thumbnail/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "bmiddle_pic": "http://wx4.sinaimg.cn/bmiddle/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "original_pic": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "is_paid": false,
+      "mblog_vip_type": 0,
+      "user": {
+        "id": 7458617409,
+        "screen_name": "清涟8",
+        "profile_image_url": "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg?KID=imgbed,tva&Expires=1653650834&ssig=kgAVryFJBT",
+        "profile_url": "https://m.weibo.cn/u/7458617409?uid=7458617409&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "statuses_count": 99582,
+        "verified": false,
+        "verified_type": -1,
+        "close_blue_v": false,
+        "description": "",
+        "gender": "f",
+        "mbtype": 12,
+        "urank": 0,
+        "mbrank": 4,
+        "follow_me": false,
+        "following": false,
+        "follow_count": 5800,
+        "followers_count": "2320",
+        "followers_count_str": "2320",
+        "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+        "avatar_hd": "https://wx2.sinaimg.cn/orj480/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg",
+        "like": false,
+        "like_me": false,
+        "badge": {
+          "user_name_certificate": 1,
+          "wenda_v2": 1,
+          "pc_new": 6,
+          "party_cardid_state": 2,
+          "aoyun_2021": 1,
+          "dailu_2021": 1,
+          "yinyuejie21_2021": 1,
+          "hongbaofei2022_2021": 2,
+          "nihaochuntian_2022": 1
+        }
+      },
+      "picStatus": "0:1,1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1",
+      "reposts_count": 8883,
+      "comments_count": 85,
+      "reprint_cmt_count": 0,
+      "attitudes_count": 69,
+      "pending_approval_count": 0,
+      "isLongText": true,
+      "longText": {
+        "longTextContent": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占有承包合同的果园，把南侧靠水塘的果园，毁园造路，强行栽种他们的绿化树。把有用地手序的果园看护房以违建被大信综合执法强拆，(当年我是村里唯一交140元办用地许可的看护房，是期房，30年后自行拆除，可到即墨土地局查实。)现在果园被铁丝网圈起强占，3亩口粮地竟然让村委下侵占集体土地收回通知书，毁我果苗。收地是以流转之名行征收之实！逼签致使我诱发脑梗住院，至今未停药。拆迁己经三年了，拆迁办多次上门逼签，派出所也随行施压。2020年冬天，我被逼无奈同意原村主任经领导同意协商好的赔偿费。但他们拖着不解决，2021年夏，现村书记和原村主任找我称领导不答应去年的口头协议了，还是原先赔偿标准，如不答应，九年承包期一过，一分钱也拿不到！占我地，强拆我房，安抚哄骗我不要告，政府会解决。达成的口头协议也不作数！这是要逼死人！！求领导，为民作主！还我风烛残年老兵一个公道！！李延术手机号13045017621 http://t.cn/R66p35Q http://t.cn/R66p35Q",
+        "url_objects": [
+          {
+            "url_ori": "http://t.cn/R66p35Q",
+            "object_id": "1022:1001018008637020000000000",
+            "info": {
+              "url_short": "http://t.cn/R66p35Q",
+              "url_long": "http://weibo.com/p/1001018008637020000000000",
+              "type": 36,
+              "result": true,
+              "title": "",
+              "description": "",
+              "last_modified": 1653618157,
+              "transcode": 0,
+              "ext_status": 0,
+              "trusted_state": 1
+            },
+            "object": {
+              "object_id": "1022:1001018008637020000000000",
+              "request_oid": "1022:1001018008637020000000000",
+              "containerid": "1001018008637020000000000",
+              "object_domain_id": "1022",
+              "object_type": "place",
+              "safe_status": 1,
+              "show_status": "10",
+              "act_status": "00",
+              "last_modified": "Fri May 27 10:22:37 CST 2022",
+              "timestamp": 1653618157286,
+              "uuid": 3852495213353177,
+              "uuidstr": "3852495213353177",
+              "activate_status": "0",
+              "object": {
+                "summary": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+                "image": {
+                  "width": "88",
+                  "url": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                  "height": "88"
+                },
+                "address": {
+                  "street_address": "青岛市，旧称胶澳 ，又被称为岛城...",
+                  "country": "中国",
+                  "formatted": "青岛市，旧称胶澳 ，又被称...",
+                  "locality": "青岛市",
+                  "telephone": "",
+                  "region": "山东省",
+                  "postal_code": "",
+                  "fax": "",
+                  "email": ""
+                },
+                "object_type": "place",
+                "target_url": "http://weibo.com/p/1001018008637020000000000",
+                "mobile": {
+                  "page_id": "1001018008637020000000000",
+                  "url": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "name": "青岛",
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  },
+                  "card": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "contents": ["青岛同城", "", "本地热门资讯、新鲜事、有缘人"],
+                    "is_asyn": 0,
+                    "pic": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                    "type": 0,
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  }
+                },
+                "checkin_num": "1206万",
+                "display_name": "青岛",
+                "url": "http://weibo.com/p/1001018008637020000000000",
+                "biz": {
+                  "biz_id": "100101",
+                  "containerid": "1001018008637020000000000"
+                },
+                "id": "1022:1001018008637020000000000",
+                "position": "36.082982 120.355173",
+                "keyword": "青岛[地点]"
+              },
+              "is_longtext": false
+            },
+            "like_count": 960950,
+            "isActionType": false,
+            "follower_count": 0,
+            "asso_like_count": 0,
+            "card_info_un_integrity": false,
+            "super_topic_status_count": 0,
+            "super_topic_photo_count": 0,
+            "search_topic_count": 0,
+            "search_topic_read_count": 0
+          }
+        ]
+      },
+      "mlevel": 0,
+      "darwin_tags": [],
+      "mblogtype": 0,
+      "rid": "9_0_0_5055157575184745204_0_0_0",
+      "cardid": "star_1522",
+      "number_display_strategy": {
+        "apply_scenario_flag": 3,
+        "display_text_min_number": 1000000,
+        "display_text": "100万+"
+      },
+      "content_auth": 0,
+      "safe_tags": 4096,
+      "comment_manage_info": {
+        "comment_permission_type": -1,
+        "approval_comment_type": 0,
+        "comment_sort_type": 0
+      },
+      "pic_num": 9,
+      "new_comment_style": 0,
+      "status": 0,
+      "page_info": {
+        "type": "place",
+        "icon": "https://h5.sinaimg.cn/upload/2016/03/15/196/timeline_icon_location_default.png",
+        "page_pic": {
+          "width": "88",
+          "url": "https://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+          "height": "88"
+        },
+        "page_url": "https://m.weibo.cn/p/index?containerid=23065700428008637020000000000&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "page_title": "青岛",
+        "content1": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+        "content2": "本地热门资讯、新鲜事、有缘人"
+      },
+      "pics": [
+        {
+          "pid": "0088LB6Nly1h129pphi2lj30lk0eltaq",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 399,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+            "geo": {
+              "width": "776",
+              "height": "525",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ppsoq3j314g200ttf",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqe6agj31jk2234qp",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 480,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "2667",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqvqmqj31jk15o7ud",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pr8k8xj314g200tp7",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129prpv82j31jk15otrk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ps51rhj30u01hcndk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pslzb6j30u01hck7o",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129psxnzmj30u01hcwur",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        }
+      ],
+      "bid": "LnugKqrzQ"
+    },
+    "rid": "2_0_0_5055157575184745204_0_0_0",
+    "safe_tags": 4096,
+    "show_additional_indication": 0,
+    "source": "360安全浏览器",
+    "status": 0,
+    "text": "//<a href='/n/南山荷锄翁来了_913'>@南山荷锄翁来了_913</a>: //<a href='/n/清涟8'>@清涟8</a>:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "user": {
+      "id": 1296171982,
+      "screen_name": "龟兹仙子",
+      "profile_image_url": "https://tva2.sinaimg.cn/crop.0.0.180.180.180/4d4203cejw1e8qgp5bmzyj2050050aa8.jpg?KID=imgbed,tva&Expires=1653650834&ssig=WkGsJzIlQe",
+      "profile_url": "https://m.weibo.cn/u/1296171982?uid=1296171982&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+      "statuses_count": 553483,
+      "verified": false,
+      "verified_type": 220,
+      "close_blue_v": false,
+      "description": "仙子是一个性格开朗、爱说爱笑的人，平素喜欢自由自在、无忧无虑的生活，兴趣爱好广泛，喜欢写作、唱歌、跳舞、游泳、下象棋等等",
+      "gender": "f",
+      "mbtype": 12,
+      "urank": 48,
+      "mbrank": 7,
+      "follow_me": false,
+      "following": false,
+      "follow_count": 3350,
+      "followers_count": "4.1万",
+      "followers_count_str": "4.1万",
+      "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+      "avatar_hd": "https://ww2.sinaimg.cn/orj480/4d4203cejw1e8qgp5bmzyj2050050aa8.jpg",
+      "like": false,
+      "like_me": false,
+      "badge": {
+        "gongyi": 1,
+        "gongyi_level": 1,
+        "dailv": 1,
+        "dzwbqlx_2016": 1,
+        "travel_2017": 1,
+        "user_name_certificate": 1,
+        "suishoupai_2018": 1,
+        "wenchuan_10th": 1,
+        "super_star_2018": 1,
+        "worldcup_2018": 34,
+        "dailv_2018": 1,
+        "qixi_2018": 1,
+        "memorial_2018": 1,
+        "suishoupai_2019": 1,
+        "wusi_2019": 1,
+        "earth_2019": 1,
+        "hongrenjie_2019": 1,
+        "dailv_2019": 1,
+        "china_2019": 1,
+        "hongkong_2019": 1,
+        "taohuayuan_2019": 1,
+        "dzwbqlx_2019": 1,
+        "rrgyj_2019": 1,
+        "gongjiri_2019": 1,
+        "macao_2019": 1,
+        "china_2019_2": 1,
+        "hongbao_2020": 1,
+        "feiyan_2020": 1,
+        "pc_new": 6,
+        "dailv_2020": 1,
+        "school_2020": 1,
+        "hongrenjie_2020": 1,
+        "china_2020": 1,
+        "zjszgf_2020": 1,
+        "weibozhiye_2020": 1,
+        "weibozhiyexianxia_2021": 1,
+        "lvzhilingyang_2021": 1,
+        "yuanlongping_2021": 1,
+        "gaokao_2021": 1,
+        "party_cardid_state": 2,
+        "hongrenjie_2021": 1,
+        "aoyun_2021": 1,
+        "dailu_2021": 1,
+        "yinyuejie21_2021": 1,
+        "weibozhiye_2021": 1,
+        "weibozhiyebobao_2021": 1,
+        "dongaohui_2022": 1,
+        "newdongaohui_2022": 1,
+        "bddxrrdongaohui_2022": 1,
+        "nihaochuntian_2022": 1,
+        "biyeji_2022": 1
+      }
+    },
+    "visible": {
+      "type": 0,
+      "list_id": 0
+    },
+    "cardid": "star_1522"
+  },
+  {
+    "_id": {"$oid": "62908bc6f8e35f41d0127837"},
+    "analysis_extra": "seqid:95262310|type:62|t:|pos:3-0-3|q:老兵维权|ext:&mid=4773690430197898&qtime=1653640034&|ppos:3-3",
+    "attitudes_count": 0,
+    "bid": "LuV1x0PtU",
+    "can_edit": false,
+    "comment_manage_info": {
+      "comment_permission_type": -1,
+      "approval_comment_type": 0,
+      "comment_sort_type": 0
+    },
+    "comments_count": 0,
+    "content_auth": 0,
+    "created_at": "Fri May 27 10:52:32 +0800 2022",
+    "darwin_tags": [],
+    "digit_attr": null,
+    "dispatch_ctrl": null,
+    "extern_safe": 0,
+    "favorited": false,
+    "filter_overseas_weibo": 0,
+    "id": "4773690430197898",
+    "isLongText": false,
+    "is_paid": false,
+    "itemid": null,
+    "kwfilter_pass": "0",
+    "mblog_vip_type": 0,
+    "mblogtype": 0,
+    "mid": "4773690430197898",
+    "mlevel": 0,
+    "new_comment_style": 0,
+    "number_display_strategy": {
+      "apply_scenario_flag": 3,
+      "display_text_min_number": 1000000,
+      "display_text": "100万+"
+    },
+    "pending_approval_count": 0,
+    "pic_ids": [],
+    "pic_num": 0,
+    "pid": 4755981177986325,
+    "pidstr": "4755981177986325",
+    "raw_text": "//@清涟8:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "region_name": "辽宁",
+    "region_opt": 0,
+    "repost_type": 1,
+    "reposts_count": 0,
+    "reprint_cmt_count": 0,
+    "retweeted_status": {
+      "visible": {
+        "type": 0,
+        "list_id": 0
+      },
+      "created_at": "Fri Apr 08 13:53:44 +0800 2022",
+      "id": "4755979026302538",
+      "mid": "4755979026302538",
+      "can_edit": false,
+      "show_additional_indication": 0,
+      "text": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占 ...<a href=\"/status/4755979026302538\">全文</a>",
+      "textLength": 1084,
+      "source": "前后2000万 OPPO R11",
+      "favorited": false,
+      "pic_ids": ["0088LB6Nly1h129pphi2lj30lk0eltaq", "0088LB6Nly1h129ppsoq3j314g200ttf", "0088LB6Nly1h129pqe6agj31jk2234qp", "0088LB6Nly1h129pqvqmqj31jk15o7ud", "0088LB6Nly1h129pr8k8xj314g200tp7", "0088LB6Nly1h129prpv82j31jk15otrk", "0088LB6Nly1h129ps51rhj30u01hcndk", "0088LB6Nly1h129pslzb6j30u01hck7o", "0088LB6Nly1h129psxnzmj30u01hcwur"],
+      "thumbnail_pic": "https://wx4.sinaimg.cn/thumbnail/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "bmiddle_pic": "http://wx4.sinaimg.cn/bmiddle/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "original_pic": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "is_paid": false,
+      "mblog_vip_type": 0,
+      "user": {
+        "id": 7458617409,
+        "screen_name": "清涟8",
+        "profile_image_url": "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg?KID=imgbed,tva&Expires=1653650834&ssig=kgAVryFJBT",
+        "profile_url": "https://m.weibo.cn/u/7458617409?uid=7458617409&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "statuses_count": 99582,
+        "verified": false,
+        "verified_type": -1,
+        "close_blue_v": false,
+        "description": "",
+        "gender": "f",
+        "mbtype": 12,
+        "urank": 0,
+        "mbrank": 4,
+        "follow_me": false,
+        "following": false,
+        "follow_count": 5800,
+        "followers_count": "2320",
+        "followers_count_str": "2320",
+        "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+        "avatar_hd": "https://wx2.sinaimg.cn/orj480/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg",
+        "like": false,
+        "like_me": false,
+        "badge": {
+          "user_name_certificate": 1,
+          "wenda_v2": 1,
+          "pc_new": 6,
+          "party_cardid_state": 2,
+          "aoyun_2021": 1,
+          "dailu_2021": 1,
+          "yinyuejie21_2021": 1,
+          "hongbaofei2022_2021": 2,
+          "nihaochuntian_2022": 1
+        }
+      },
+      "picStatus": "0:1,1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1",
+      "reposts_count": 8883,
+      "comments_count": 85,
+      "reprint_cmt_count": 0,
+      "attitudes_count": 69,
+      "pending_approval_count": 0,
+      "isLongText": true,
+      "longText": {
+        "longTextContent": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占有承包合同的果园，把南侧靠水塘的果园，毁园造路，强行栽种他们的绿化树。把有用地手序的果园看护房以违建被大信综合执法强拆，(当年我是村里唯一交140元办用地许可的看护房，是期房，30年后自行拆除，可到即墨土地局查实。)现在果园被铁丝网圈起强占，3亩口粮地竟然让村委下侵占集体土地收回通知书，毁我果苗。收地是以流转之名行征收之实！逼签致使我诱发脑梗住院，至今未停药。拆迁己经三年了，拆迁办多次上门逼签，派出所也随行施压。2020年冬天，我被逼无奈同意原村主任经领导同意协商好的赔偿费。但他们拖着不解决，2021年夏，现村书记和原村主任找我称领导不答应去年的口头协议了，还是原先赔偿标准，如不答应，九年承包期一过，一分钱也拿不到！占我地，强拆我房，安抚哄骗我不要告，政府会解决。达成的口头协议也不作数！这是要逼死人！！求领导，为民作主！还我风烛残年老兵一个公道！！李延术手机号13045017621 http://t.cn/R66p35Q http://t.cn/R66p35Q",
+        "url_objects": [
+          {
+            "url_ori": "http://t.cn/R66p35Q",
+            "object_id": "1022:1001018008637020000000000",
+            "info": {
+              "url_short": "http://t.cn/R66p35Q",
+              "url_long": "http://weibo.com/p/1001018008637020000000000",
+              "type": 36,
+              "result": true,
+              "title": "",
+              "description": "",
+              "last_modified": 1653618157,
+              "transcode": 0,
+              "ext_status": 0,
+              "trusted_state": 1
+            },
+            "object": {
+              "object_id": "1022:1001018008637020000000000",
+              "request_oid": "1022:1001018008637020000000000",
+              "containerid": "1001018008637020000000000",
+              "object_domain_id": "1022",
+              "object_type": "place",
+              "safe_status": 1,
+              "show_status": "10",
+              "act_status": "00",
+              "last_modified": "Fri May 27 10:22:37 CST 2022",
+              "timestamp": 1653618157286,
+              "uuid": 3852495213353177,
+              "uuidstr": "3852495213353177",
+              "activate_status": "0",
+              "object": {
+                "summary": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+                "image": {
+                  "width": "88",
+                  "url": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                  "height": "88"
+                },
+                "address": {
+                  "street_address": "青岛市，旧称胶澳 ，又被称为岛城...",
+                  "country": "中国",
+                  "formatted": "青岛市，旧称胶澳 ，又被称...",
+                  "locality": "青岛市",
+                  "telephone": "",
+                  "region": "山东省",
+                  "postal_code": "",
+                  "fax": "",
+                  "email": ""
+                },
+                "object_type": "place",
+                "target_url": "http://weibo.com/p/1001018008637020000000000",
+                "mobile": {
+                  "page_id": "1001018008637020000000000",
+                  "url": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "name": "青岛",
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  },
+                  "card": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "contents": ["青岛同城", "", "本地热门资讯、新鲜事、有缘人"],
+                    "is_asyn": 0,
+                    "pic": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                    "type": 0,
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  }
+                },
+                "checkin_num": "1206万",
+                "display_name": "青岛",
+                "url": "http://weibo.com/p/1001018008637020000000000",
+                "biz": {
+                  "biz_id": "100101",
+                  "containerid": "1001018008637020000000000"
+                },
+                "id": "1022:1001018008637020000000000",
+                "position": "36.082982 120.355173",
+                "keyword": "青岛[地点]"
+              },
+              "is_longtext": false
+            },
+            "like_count": 960950,
+            "isActionType": false,
+            "follower_count": 0,
+            "asso_like_count": 0,
+            "card_info_un_integrity": false,
+            "super_topic_status_count": 0,
+            "super_topic_photo_count": 0,
+            "search_topic_count": 0,
+            "search_topic_read_count": 0
+          }
+        ]
+      },
+      "mlevel": 0,
+      "darwin_tags": [],
+      "mblogtype": 0,
+      "rid": "9_0_0_5055157575184745204_0_0_0",
+      "cardid": "star_1522",
+      "number_display_strategy": {
+        "apply_scenario_flag": 3,
+        "display_text_min_number": 1000000,
+        "display_text": "100万+"
+      },
+      "content_auth": 0,
+      "safe_tags": 4096,
+      "comment_manage_info": {
+        "comment_permission_type": -1,
+        "approval_comment_type": 0,
+        "comment_sort_type": 0
+      },
+      "pic_num": 9,
+      "new_comment_style": 0,
+      "status": 0,
+      "page_info": {
+        "type": "place",
+        "icon": "https://h5.sinaimg.cn/upload/2016/03/15/196/timeline_icon_location_default.png",
+        "page_pic": {
+          "width": "88",
+          "url": "https://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+          "height": "88"
+        },
+        "page_url": "https://m.weibo.cn/p/index?containerid=23065700428008637020000000000&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "page_title": "青岛",
+        "content1": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+        "content2": "本地热门资讯、新鲜事、有缘人"
+      },
+      "pics": [
+        {
+          "pid": "0088LB6Nly1h129pphi2lj30lk0eltaq",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 399,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+            "geo": {
+              "width": "776",
+              "height": "525",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ppsoq3j314g200ttf",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqe6agj31jk2234qp",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 480,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "2667",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqvqmqj31jk15o7ud",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pr8k8xj314g200tp7",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129prpv82j31jk15otrk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ps51rhj30u01hcndk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pslzb6j30u01hck7o",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129psxnzmj30u01hcwur",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        }
+      ],
+      "bid": "LnugKqrzQ"
+    },
+    "rid": "3_0_0_5055157575184745204_0_0_0",
+    "safe_tags": 4096,
+    "show_additional_indication": 0,
+    "source": "iPhone客户端",
+    "status": 0,
+    "text": "//<a href='/n/清涟8'>@清涟8</a>:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "user": {
+      "id": 7590959979,
+      "screen_name": "兔子63033080864",
+      "profile_image_url": "https://tvax4.sinaimg.cn/crop.0.0.360.360.180/008hITsnly8h1eujqn0u1j30a00a0t8z.jpg?KID=imgbed,tva&Expires=1653650834&ssig=W0CW6RsVIQ",
+      "profile_url": "https://m.weibo.cn/u/7590959979?uid=7590959979&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+      "statuses_count": 115,
+      "verified": false,
+      "verified_type": -1,
+      "close_blue_v": false,
+      "description": "",
+      "gender": "m",
+      "mbtype": 2,
+      "urank": 0,
+      "mbrank": 2,
+      "follow_me": false,
+      "following": false,
+      "follow_count": 970,
+      "followers_count": "623",
+      "followers_count_str": "623",
+      "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+      "avatar_hd": "https://wx4.sinaimg.cn/orj480/008hITsnly8h1eujqn0u1j30a00a0t8z.jpg",
+      "like": false,
+      "like_me": false,
+      "badge": {
+        "user_name_certificate": 1
+      }
+    },
+    "visible": {
+      "type": 0,
+      "list_id": 0
+    }
+  },
+  {
+    "_id": {"$oid": "62908bc6f8e35f41d0127838"},
+    "analysis_extra": "seqid:95262310|type:62|t:|pos:3-0-4|q:老兵维权|ext:&mid=4773689550181958&qtime=1653640034&|ppos:4-4",
+    "attitudes_count": 0,
+    "bid": "LuV070LkO",
+    "can_edit": false,
+    "comment_manage_info": {
+      "comment_permission_type": -1,
+      "approval_comment_type": 0,
+      "comment_sort_type": 0
+    },
+    "comments_count": 1,
+    "content_auth": 0,
+    "created_at": "Fri May 27 10:49:02 +0800 2022",
+    "darwin_tags": [],
+    "digit_attr": null,
+    "dispatch_ctrl": null,
+    "extern_safe": 0,
+    "favorited": false,
+    "filter_overseas_weibo": 0,
+    "id": "4773689550181958",
+    "isLongText": false,
+    "is_paid": false,
+    "itemid": null,
+    "kwfilter_pass": "0",
+    "mblog_vip_type": 0,
+    "mblogtype": 0,
+    "mid": "4773689550181958",
+    "mlevel": 0,
+    "new_comment_style": 0,
+    "number_display_strategy": {
+      "apply_scenario_flag": 3,
+      "display_text_min_number": 1000000,
+      "display_text": "100万+"
+    },
+    "pending_approval_count": 0,
+    "pic_ids": [],
+    "pic_num": 0,
+    "pid": 4755981177986325,
+    "pidstr": "4755981177986325",
+    "raw_text": "//@清涟8:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "region_name": "天津",
+    "region_opt": 0,
+    "repost_type": 1,
+    "reposts_count": 1,
+    "reprint_cmt_count": 0,
+    "retweeted_status": {
+      "visible": {
+        "type": 0,
+        "list_id": 0
+      },
+      "created_at": "Fri Apr 08 13:53:44 +0800 2022",
+      "id": "4755979026302538",
+      "mid": "4755979026302538",
+      "can_edit": false,
+      "show_additional_indication": 0,
+      "text": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占 ...<a href=\"/status/4755979026302538\">全文</a>",
+      "textLength": 1084,
+      "source": "前后2000万 OPPO R11",
+      "favorited": false,
+      "pic_ids": ["0088LB6Nly1h129pphi2lj30lk0eltaq", "0088LB6Nly1h129ppsoq3j314g200ttf", "0088LB6Nly1h129pqe6agj31jk2234qp", "0088LB6Nly1h129pqvqmqj31jk15o7ud", "0088LB6Nly1h129pr8k8xj314g200tp7", "0088LB6Nly1h129prpv82j31jk15otrk", "0088LB6Nly1h129ps51rhj30u01hcndk", "0088LB6Nly1h129pslzb6j30u01hck7o", "0088LB6Nly1h129psxnzmj30u01hcwur"],
+      "thumbnail_pic": "https://wx4.sinaimg.cn/thumbnail/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "bmiddle_pic": "http://wx4.sinaimg.cn/bmiddle/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "original_pic": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+      "is_paid": false,
+      "mblog_vip_type": 0,
+      "user": {
+        "id": 7458617409,
+        "screen_name": "清涟8",
+        "profile_image_url": "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg?KID=imgbed,tva&Expires=1653650834&ssig=kgAVryFJBT",
+        "profile_url": "https://m.weibo.cn/u/7458617409?uid=7458617409&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "statuses_count": 99582,
+        "verified": false,
+        "verified_type": -1,
+        "close_blue_v": false,
+        "description": "",
+        "gender": "f",
+        "mbtype": 12,
+        "urank": 0,
+        "mbrank": 4,
+        "follow_me": false,
+        "following": false,
+        "follow_count": 5800,
+        "followers_count": "2320",
+        "followers_count_str": "2320",
+        "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+        "avatar_hd": "https://wx2.sinaimg.cn/orj480/0088LB6Nly8gf1f6lmmd3j30ro0rotbf.jpg",
+        "like": false,
+        "like_me": false,
+        "badge": {
+          "user_name_certificate": 1,
+          "wenda_v2": 1,
+          "pc_new": 6,
+          "party_cardid_state": 2,
+          "aoyun_2021": 1,
+          "dailu_2021": 1,
+          "yinyuejie21_2021": 1,
+          "hongbaofei2022_2021": 2,
+          "nihaochuntian_2022": 1
+        }
+      },
+      "picStatus": "0:1,1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1",
+      "reposts_count": 8883,
+      "comments_count": 85,
+      "reprint_cmt_count": 0,
+      "attitudes_count": 69,
+      "pending_approval_count": 0,
+      "isLongText": true,
+      "longText": {
+        "longTextContent": "山东省青岛市即墨区大信街道付家屯村民李延术，76岁，69年退伍老兵。血泪控诉大信政府拆迁办在2019年5月我村拆迁过程中强拆强占！！【我村果园最低补偿标准4.5万一亩，而我7亩果园，只给2亩盛果期，剩下的只像征性的补偿，看护房加7亩果园还有三亩口粮田评估价值只给19.7万元】没有达成协议。随后强占有承包合同的果园，把南侧靠水塘的果园，毁园造路，强行栽种他们的绿化树。把有用地手序的果园看护房以违建被大信综合执法强拆，(当年我是村里唯一交140元办用地许可的看护房，是期房，30年后自行拆除，可到即墨土地局查实。)现在果园被铁丝网圈起强占，3亩口粮地竟然让村委下侵占集体土地收回通知书，毁我果苗。收地是以流转之名行征收之实！逼签致使我诱发脑梗住院，至今未停药。拆迁己经三年了，拆迁办多次上门逼签，派出所也随行施压。2020年冬天，我被逼无奈同意原村主任经领导同意协商好的赔偿费。但他们拖着不解决，2021年夏，现村书记和原村主任找我称领导不答应去年的口头协议了，还是原先赔偿标准，如不答应，九年承包期一过，一分钱也拿不到！占我地，强拆我房，安抚哄骗我不要告，政府会解决。达成的口头协议也不作数！这是要逼死人！！求领导，为民作主！还我风烛残年老兵一个公道！！李延术手机号13045017621 http://t.cn/R66p35Q http://t.cn/R66p35Q",
+        "url_objects": [
+          {
+            "url_ori": "http://t.cn/R66p35Q",
+            "object_id": "1022:1001018008637020000000000",
+            "info": {
+              "url_short": "http://t.cn/R66p35Q",
+              "url_long": "http://weibo.com/p/1001018008637020000000000",
+              "type": 36,
+              "result": true,
+              "title": "",
+              "description": "",
+              "last_modified": 1653618157,
+              "transcode": 0,
+              "ext_status": 0,
+              "trusted_state": 1
+            },
+            "object": {
+              "object_id": "1022:1001018008637020000000000",
+              "request_oid": "1022:1001018008637020000000000",
+              "containerid": "1001018008637020000000000",
+              "object_domain_id": "1022",
+              "object_type": "place",
+              "safe_status": 1,
+              "show_status": "10",
+              "act_status": "00",
+              "last_modified": "Fri May 27 10:22:37 CST 2022",
+              "timestamp": 1653618157286,
+              "uuid": 3852495213353177,
+              "uuidstr": "3852495213353177",
+              "activate_status": "0",
+              "object": {
+                "summary": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+                "image": {
+                  "width": "88",
+                  "url": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                  "height": "88"
+                },
+                "address": {
+                  "street_address": "青岛市，旧称胶澳 ，又被称为岛城...",
+                  "country": "中国",
+                  "formatted": "青岛市，旧称胶澳 ，又被称...",
+                  "locality": "青岛市",
+                  "telephone": "",
+                  "region": "山东省",
+                  "postal_code": "",
+                  "fax": "",
+                  "email": ""
+                },
+                "object_type": "place",
+                "target_url": "http://weibo.com/p/1001018008637020000000000",
+                "mobile": {
+                  "page_id": "1001018008637020000000000",
+                  "url": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "name": "青岛",
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  },
+                  "card": {
+                    "scheme": "sinaweibo://cardlist?containerid=23065700428008637020000000000",
+                    "contents": ["青岛同城", "", "本地热门资讯、新鲜事、有缘人"],
+                    "is_asyn": 0,
+                    "pic": "http://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+                    "type": 0,
+                    "high_scheme": "sinaweibo://heatmap?latitude=36.082982&longitude=120.355173&showcardlist=true&show_heatmark=0&zoom=12&ext=%7B%22lbsType%22%3A%22bus%22%2C%22lbsID%22%3A%228008637020000000000%22%2C%22zoom%22%3A%2212%22%7D",
+                    "status": 1
+                  }
+                },
+                "checkin_num": "1206万",
+                "display_name": "青岛",
+                "url": "http://weibo.com/p/1001018008637020000000000",
+                "biz": {
+                  "biz_id": "100101",
+                  "containerid": "1001018008637020000000000"
+                },
+                "id": "1022:1001018008637020000000000",
+                "position": "36.082982 120.355173",
+                "keyword": "青岛[地点]"
+              },
+              "is_longtext": false
+            },
+            "like_count": 960950,
+            "isActionType": false,
+            "follower_count": 0,
+            "asso_like_count": 0,
+            "card_info_un_integrity": false,
+            "super_topic_status_count": 0,
+            "super_topic_photo_count": 0,
+            "search_topic_count": 0,
+            "search_topic_read_count": 0
+          }
+        ]
+      },
+      "mlevel": 0,
+      "darwin_tags": [],
+      "mblogtype": 0,
+      "rid": "9_0_0_5055157575184745204_0_0_0",
+      "cardid": "star_1522",
+      "number_display_strategy": {
+        "apply_scenario_flag": 3,
+        "display_text_min_number": 1000000,
+        "display_text": "100万+"
+      },
+      "content_auth": 0,
+      "safe_tags": 4096,
+      "comment_manage_info": {
+        "comment_permission_type": -1,
+        "approval_comment_type": 0,
+        "comment_sort_type": 0
+      },
+      "pic_num": 9,
+      "new_comment_style": 0,
+      "status": 0,
+      "page_info": {
+        "type": "place",
+        "icon": "https://h5.sinaimg.cn/upload/2016/03/15/196/timeline_icon_location_default.png",
+        "page_pic": {
+          "width": "88",
+          "url": "https://ww2.sinaimg.cn/wap180/4e704b16jw1esr3cs9bf3j209k09kjsr.jpg",
+          "height": "88"
+        },
+        "page_url": "https://m.weibo.cn/p/index?containerid=23065700428008637020000000000&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+        "page_title": "青岛",
+        "content1": "青岛市，旧称胶澳 ，又被称为岛城，是副省级城市、计划单列市，被誉为东方瑞士。青岛位于中国北方海岸线的中部，西接广阔腹地，道教的发祥地之一。青岛也是中国东部沿海重要的经济、文化中心，国际滨海旅游度假胜地、中国优秀旅游城市、国家历史文化名城、国家园林城市，以及中国海洋科研及其产业开发中心城市，重要的现代化制造业及高新技术产业基地。 青岛市同时也是中国“14个沿海开放城市、8个国际会议城市”之一。中国人...",
+        "content2": "本地热门资讯、新鲜事、有缘人"
+      },
+      "pics": [
+        {
+          "pid": "0088LB6Nly1h129pphi2lj30lk0eltaq",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 399,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pphi2lj30lk0eltaq.jpg",
+            "geo": {
+              "width": "776",
+              "height": "525",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ppsoq3j314g200ttf",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129ppsoq3j314g200ttf.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqe6agj31jk2234qp",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 480,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqe6agj31jk2234qp.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "2667",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pqvqmqj31jk15o7ud",
+          "url": "https://wx4.sinaimg.cn/orj360/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx4.sinaimg.cn/large/0088LB6Nly1h129pqvqmqj31jk15o7ud.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pr8k8xj314g200tp7",
+          "url": "https://wx2.sinaimg.cn/orj360/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx2.sinaimg.cn/large/0088LB6Nly1h129pr8k8xj314g200tp7.jpg",
+            "geo": {
+              "width": "1456",
+              "height": "2592",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129prpv82j31jk15otrk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 270,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129prpv82j31jk15otrk.jpg",
+            "geo": {
+              "width": "2000",
+              "height": "1500",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129ps51rhj30u01hcndk",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129ps51rhj30u01hcndk.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129pslzb6j30u01hck7o",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129pslzb6j30u01hck7o.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        },
+        {
+          "pid": "0088LB6Nly1h129psxnzmj30u01hcwur",
+          "url": "https://wx3.sinaimg.cn/orj360/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+          "size": "orj360",
+          "geo": {
+            "width": 360,
+            "height": 640,
+            "croped": false
+          },
+          "large": {
+            "size": "large",
+            "url": "https://wx3.sinaimg.cn/large/0088LB6Nly1h129psxnzmj30u01hcwur.jpg",
+            "geo": {
+              "width": "1080",
+              "height": "1920",
+              "croped": false
+            }
+          }
+        }
+      ],
+      "bid": "LnugKqrzQ"
+    },
+    "rid": "4_0_0_5055157575184745204_0_0_0",
+    "safe_tags": 4096,
+    "show_additional_indication": 0,
+    "source": "华为手机",
+    "status": 0,
+    "text": "//<a href='/n/清涟8'>@清涟8</a>:何为公信力？！！2022年1月29日，青岛市即墨区大信街道付家屯村王书记，经大信街道领导同意，言之凿凿让删除维权帖，答复2022年3月底解决老兵李延术被强占果园和强拆看护房赔偿一事，【有通话录音为证】又一次言而无信了！！！",
+    "user": {
+      "id": 5252056755,
+      "screen_name": "南山荷锄翁来了_913",
+      "profile_image_url": "https://tvax1.sinaimg.cn/crop.0.0.758.758.180/005Jr5SPly8fq3k1ra28xj30l20l3wf5.jpg?KID=imgbed,tva&Expires=1653650834&ssig=dPpah5vNaU",
+      "profile_url": "https://m.weibo.cn/u/5252056755?uid=5252056755&luicode=10000011&lfid=100103type%3D62%26q%3D%E8%80%81%E5%85%B5%E7%BB%B4%E6%9D%83",
+      "statuses_count": 122354,
+      "verified": false,
+      "verified_type": -1,
+      "close_blue_v": false,
+      "description": "没事瞎BB\uD83D\uDE04",
+      "gender": "m",
+      "mbtype": 0,
+      "urank": 24,
+      "mbrank": 0,
+      "follow_me": false,
+      "following": false,
+      "follow_count": 5186,
+      "followers_count": "4756",
+      "followers_count_str": "4756",
+      "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg",
+      "avatar_hd": "https://wx1.sinaimg.cn/orj480/005Jr5SPly8fq3k1ra28xj30l20l3wf5.jpg",
+      "like": false,
+      "like_me": false,
+      "badge": {
+        "panda": 1,
+        "user_name_certificate": 1,
+        "worldcup_2018": 13,
+        "wenda_v2": 1,
+        "dailv_2018": 4,
+        "lol_s8": 1,
+        "hongbaofei_2019": 1,
+        "suishoupai_2019": 1,
+        "wusi_2019": 1,
+        "hongrenjie_2019": 1,
+        "china_2019": 1,
+        "hongkong_2019": 1,
+        "dzwbqlx_2019": 5,
+        "weishi_2019": 1,
+        "hongbao_2020": 2,
+        "feiyan_2020": 1,
+        "kangyi_2020": 1,
+        "dailv_2020": 1,
+        "school_2020": 1,
+        "china_2020": 1,
+        "weibozhiye_2020": 1,
+        "lvzhilingyang_2021": 1,
+        "yuanlongping_2021": 1,
+        "gaokao_2021": 1,
+        "party_cardid_state": 2,
+        "aoyun_2021": 1,
+        "dailu_2021": 5,
+        "kaixue21_2021": 1,
+        "renrengongyijie_2021": 1,
+        "yinyuejie21_2021": 1,
+        "weibozhiye_2021": 1,
+        "weibozhiyebobao_2021": 1,
+        "newdongaohui_2022": 1,
+        "nihaochuntian_2022": 1,
+        "biyeji_2022": 1
+      }
+    },
+    "visible": {
+      "type": 0,
+      "list_id": 0
+    }
+  }
+]
