@@ -97,13 +97,10 @@ class MongoRepository(Repository):
         pass
 
     def exists(self, *args, **kwargs) -> bool:
-        generator = self.search(kwargs)
-        exists = True
-        try:
-            _ = next(generator)
-        except StopIteration:
-            exists = False
-        return exists
+        if self.collection.find_one(locals()['kwargs']):
+            return True
+        else:
+            return False
 
     def get(self, key: Any, **kwargs):
         item = self.collection.find_one({'_id': key})
@@ -121,7 +118,7 @@ class MongoRepository(Repository):
             update={'$set': kwargs})
 
     def search(self, *args, **kwargs):
-        cursor = self.collection.find(kwargs)
+        cursor = self.collection.find(locals()['kwargs'])
         for x in cursor:
             yield x
 
