@@ -2,10 +2,10 @@
 
 # docker-compose -f docker/tests.yml up
 
-docker-compose \
+docker compose \
     -f docker/tests.yml \
         run \
             dbi-repositories \
                 python -m unittest discover
-
-docker-compose -f docker/tests.yml down
+#docker compose -f docker/tests.yml up
+docker compose -f docker/tests.yml down

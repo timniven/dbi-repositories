@@ -75,7 +75,7 @@ class TestMongoRepository(unittest.TestCase):
         error = False
         try:
             repo.add_many(tweets, error_duplicates=True)
-        except BulkWriteError as e:
+        except ValueError:
             error = True
         self.assertTrue(error)
 

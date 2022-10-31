@@ -5,6 +5,7 @@ from typing import Any, Dict, Generator, List, Optional
 import pymongo
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 
+from dbi_repositories import util
 from dbi_repositories.base import Repository
 
 
@@ -26,12 +27,14 @@ class MongoRepository(Repository):
                  client: pymongo.MongoClient,
                  db_name: str,
                  collection_name: str,
-                 _id_attr: Optional[str] = None):
+                 _id_attr: Optional[str] = None,
+                 chunk_size: int = 1000):
         super().__init__()
 
         self.db_name = db_name
         self.collection_name = collection_name
         self._id_attr = _id_attr
+        self.chunk_size = chunk_size
 
         self.client = client
         self.db = self.client[db_name]
@@ -52,24 +55,28 @@ class MongoRepository(Repository):
             if error_duplicates:
                 raise e
 
-    def add_many(self,
-                 items: List[MutableMapping],
-                 error_duplicates: bool = False,
-                 **kwargs) -> None:
-        if self._id_attr:
-            for item in items:
-                item['_id'] = item[self._id_attr]
-        try:
-            # NOTE: ordered=False reason: if ordered, the documents will be
-            # inserted in the order supplied, if False, they will all be tried
-            # in parallel, so the only ones that fail are the ones that are
-            # supposed to, so the way this function works is to insert all
-            # legitimate items.
-            self.collection.insert_many(items, ordered=False)
-        except BulkWriteError as e:
-            duplicate_error = 'duplicate key error' in e.__dict__['_message']
-            if duplicate_error and error_duplicates:
-                raise e
+    def add_many(
+            self,
+            items: List[MutableMapping],
+            error_duplicates: bool = False,
+            **kwargs
+    ) -> None:
+        if error_duplicates:
+            raise ValueError('No longer supported for bulk writes due to chunking. '
+                             'Consider requesting this feature if you really want it.')
+        for chunk in util.get_chunks(items, self.chunk_size):
+            if self._id_attr:
+                for item in chunk:
+                    item['_id'] = item[self._id_attr]
+            try:
+                # NOTE: ordered=False reason: if ordered, the documents will be
+                # inserted in the order supplied, if False, they will all be tried
+                # in parallel, so the only ones that fail are the ones that are
+                # supposed to, so the way this function works is to insert all
+                # legitimate items.
+                self.collection.insert_many(chunk, ordered=False)
+            except BulkWriteError:
+                pass
 
     def all(self, **kwargs) -> Generator:
         cursor = self.collection.find({})
