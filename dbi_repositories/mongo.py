@@ -1,7 +1,7 @@
 from collections.abc import MutableMapping
 import logging
 from typing import Any, Dict, Generator, List, Optional
-
+import pydash
 import pymongo
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 
@@ -48,7 +48,7 @@ class MongoRepository(Repository):
             error_duplicates: bool = False,
             **kwargs) -> None:
         if self._id_attr:
-            item['_id'] = item[self._id_attr]
+            item['_id'] = pydash.get(item, self._id_attr)
         try:
             self.collection.insert_one(item)
         except DuplicateKeyError as e:
@@ -67,7 +67,7 @@ class MongoRepository(Repository):
         for chunk in util.get_chunks(items, self.chunk_size):
             if self._id_attr:
                 for item in chunk:
-                    item['_id'] = item[self._id_attr]
+                    item['_id'] = pydash.get(item, self._id_attr)
             try:
                 # NOTE: ordered=False reason: if ordered, the documents will be
                 # inserted in the order supplied, if False, they will all be tried
